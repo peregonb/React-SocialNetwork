@@ -1,0 +1,35 @@
+
+.img{
+    margin-bottom: 5px;
+    height: 60px;
+    width: 60px;
+    border-radius: 100%;
+}
+
+.messages{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    max-height: calc(100vh - 200px);
+    height: 100%;
+    overflow: scroll;
+    box-sizing: border-box;
+}
+
+.message{
+    padding: 10px 15px;
+    background: rgba(rgb(150, 178, 255), .2);
+    border-radius: 20px;
+    display: flex;
+    margin-bottom: 10px;
+
+    &.right{
+        display: flex;
+        align-self: flex-end;
+    }
+}
+.name{
+    font-size: 14px;
+    
+}

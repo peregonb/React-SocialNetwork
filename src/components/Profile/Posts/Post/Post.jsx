@@ -5,6 +5,7 @@ const Post = (props) => {
     return (
       <div className={s.block}>
         <img
+        className={s.img}
           src="https://avatarko.ru/img/kartinka/5/kot_ochki_4754.jpg"
           alt=""
         />

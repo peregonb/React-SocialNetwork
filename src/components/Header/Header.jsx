@@ -7,9 +7,8 @@ const Header = () => {
         <div className={`${s.wrap} wrap`}>
           <div className={s.logo}>LOGO</div>
           <div className={s.menu}>
-            <div className={s.item}>Пункт 1</div>
-            <div className={s.item}>Пункт 2</div>
-            <div className={s.item}>Пункт 3</div>
+            <div className={s.item}>Настройки</div>
+            <div className={s.item}>Войти</div>
           </div>
         </div>
       </header>

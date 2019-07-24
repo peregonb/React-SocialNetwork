@@ -12,5 +12,10 @@
     a{
         text-decoration: none;
         color: black;
+      //transition: color $t;
+      &.active{
+        color: darkslateblue;
+        //transition: color $t;
+      }
     }
 }

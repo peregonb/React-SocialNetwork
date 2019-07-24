@@ -5,26 +5,32 @@ import Profile from "./components/Profile/Profile";
 import Dialogs from "./components/Dialogs/Dialogs";
 import {BrowserRouter, Route} from "react-router-dom";
 import "./scss/App.scss";
+import Music from "./components/Music/Music";
+import News from "./components/News/News";
+import Settings from "./components/Settings/Settings";
 
 const App = () => {
-  return (
-    <BrowserRouter>
-      <div className="wrapper">
-        <Header />
-        <div className="content">
-          <div className="content-wrap wrap">
-            <Sidebar />
-            <div className="content-right">
-              {/* <Profile/> */}
-              {/* <Dialogs /> */}
+    return (
+        <BrowserRouter>
+          <div className="wrapper">
+            <Header />
+            <div className="content">
+              <div className="content-wrap wrap">
+                <Sidebar />
+                <div className="content-right">
+                    {/* <Profile/> */}
+                    {/* <Dialogs /> */}
 
-              <Route path='/profile' component={Profile} />
-              <Route path='/dialogs' component={Dialogs} />
+                  <Route path='/profile' component={Profile} />
+                  <Route path='/dialogs' component={Dialogs} />
+                  <Route path='/music' component={Music} />
+                  <Route path='/news' component={News} />
+                  <Route path='/settings' component={Settings} />
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-    </BrowserRouter>
-  );
+        </BrowserRouter>
+    );
 };
 export default App;
