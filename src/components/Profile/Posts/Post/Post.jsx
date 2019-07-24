@@ -9,7 +9,12 @@ const Post = (props) => {
           src="https://avatarko.ru/img/kartinka/5/kot_ochki_4754.jpg"
           alt=""
         />
+        
+        <div className={s.right}>
+          <div className={s.name}>{props.name}</div>
         <div className={s.text}>{props.message}</div>
+        <div className={`${s.like} icon-like`}>{props.like}</div>
+        </div>
       </div>
     );
 }

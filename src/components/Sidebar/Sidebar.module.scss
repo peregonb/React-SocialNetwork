@@ -1,8 +1,18 @@
+@import "../../scss/resources.scss";
+
 .sidebar{
         width: 150px;
         max-width: 150px;
         // border-right: 1px solid rgba(#000 , .2);
         padding-top: 20px;
+
+        @include r(768){
+          width: 100px;
+          max-width: 100px;
+        }
+        @include r(600){
+          display: none;
+        }
     }
 .item{
     height: 26px;

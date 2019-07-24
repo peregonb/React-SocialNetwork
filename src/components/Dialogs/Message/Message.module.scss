@@ -1,3 +1,6 @@
+@mixin r($point) {
+    @media (max-width: $point + px) { @content; }
+}
 
 .img{
     margin-bottom: 5px;
@@ -23,7 +26,10 @@
     border-radius: 20px;
     display: flex;
     margin-bottom: 10px;
-
+    font-size: 14px;
+    @include r(420){
+        font-size: 12px;
+    }
     &.right{
         display: flex;
         align-self: flex-end;

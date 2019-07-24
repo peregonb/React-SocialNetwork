@@ -1,5 +1,6 @@
 @mixin r($point) {
-    @media (max-width: $point) { @content; }
+    @media (max-width: $point + px) { @content; }
 }
 
 $t : .3s;
+$montserat : 'Montserrat';
