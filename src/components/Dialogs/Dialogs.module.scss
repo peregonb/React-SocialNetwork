@@ -101,7 +101,7 @@
 .writearea{
     width: 100%;
     height: 50px;
-
+    max-height: 135px;
     @include r(420){
         font-size: 12px;
         height: 45px;

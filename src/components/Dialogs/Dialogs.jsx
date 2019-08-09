@@ -1,32 +1,37 @@
 import React from "react";
 import s from "./Dialogs.module.scss";
-import {NavLink} from "react-router-dom";
+// import {NavLink} from "react-router-dom";
 import DialogItem from "./DialogItem/DialogItem";
 import Message from "./Message/Message";
+// import $ from "jquery";
 
 
 const Dialogs = props => {
+   
+  let dialogsElements = props.state.dialogsData.map(d => <DialogItem id={d.id} img={d.imageUrl}/>);
+  let messageElements = props.state.messageData.map(m => <Message id={m.id} message={m.message} extraClass={m.extraClass} />);
+
+  let textareaElement = React.createRef();
+  let sendMessage = () => {
+    alert(textareaElement.current.value)
+  }
+
   return (
     <div className={s.section}>
       <div className={`${s.block} + ${s.dialogs}`}>
-          <DialogItem id="1" img="https://avatarko.ru/img/kartinka/5/kot_ochki_4754.jpg"/>
-          <DialogItem id="2" img="https://avatarko.ru/img/kartinka/5/kot_ochki_4754.jpg"/>
-          <DialogItem id="3" img="https://avatarko.ru/img/kartinka/5/kot_ochki_4754.jpg"/>
-          <DialogItem id="4" img="https://avatarko.ru/img/kartinka/5/kot_ochki_4754.jpg"/>
-          <DialogItem id="5" img="https://avatarko.ru/img/kartinka/5/kot_ochki_4754.jpg"/>
-        
+          {dialogsElements}
       </div>
       
       <div className={s.message_section}>
       <div className={`${s.block} + ${s.messages}`}>
 
-          <Message message="Привет"/>
-          <Message message="Как там твой курс по реакту?" extraClass="true"/>
-          <Message message="Все отлично, все клубнично"/>
+          {messageElements}
+          
       </div>
-      <textarea className={`${s.block} + ${s.writearea}`} placeholder="Введите ссобщение">
+      <textarea ref={textareaElement} className={`${s.block} + ${s.writearea}`} placeholder="Введите сообщение">
         
       </textarea>
+      <button onClick={sendMessage}>Отправить</button>
       </div>
     </div>
   );
