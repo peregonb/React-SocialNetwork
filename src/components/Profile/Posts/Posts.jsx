@@ -24,6 +24,7 @@ const Posts = (props) => {
       <textarea ref={newPostElement} className={`${s.block} ${s.textarea}`} placeholder="Что у вас нового?"/>
       <button onClick={addPost}>Отправить</button>
       {postElements}
+      
     </div>
   );
 };

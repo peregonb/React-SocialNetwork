@@ -27,6 +27,8 @@
     display: flex;
     margin-bottom: 10px;
     font-size: 14px;
+    position: relative;
+    z-index: 4;
     @include r(420){
         font-size: 12px;
     }

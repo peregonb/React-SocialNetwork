@@ -7,7 +7,7 @@ const Header = () => {
     <div className="">
       <header className={s.header}>
         <div className={`${s.wrap} wrap`}>
-          <div className={s.logo}>LOGO</div>
+          <div className={s.logo}>i<span>:</span>røvet</div>
           <div className={s.menu}>
             <div className={s.item}>Настройки</div>
             <div className={s.item}>Войти</div>

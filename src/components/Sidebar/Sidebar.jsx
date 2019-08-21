@@ -3,18 +3,20 @@ import s from "./Sidebar.module.scss";
 import {NavLink} from "react-router-dom";
 
 const Sidebar = () => {
+
+
   return (
     <div className={s.sidebar}>
-      <div className={s.item}>
+      <div className={`${s.item} icon-avatar`}>
         <NavLink to="/profile" activeClassName={s.active}>Профиль</NavLink>
       </div>
-      <div className={s.item}>
+      <div className={`${s.item} icon-envelope`}>
         <NavLink to="/dialogs" activeClassName={s.active}>Сообщения</NavLink>
       </div>
-      <div className={s.item}>
+      <div className={`${s.item} icon-newspaper`}>
         <NavLink to="/news" activeClassName={s.active}>Новости</NavLink>
       </div>
-      <div className={s.item}>
+      <div className={`${s.item} icon-music-player`}>
         <NavLink to="/music" activeClassName={s.active}>Музыка</NavLink>
       </div>
       {/* <div className={s.item}>
