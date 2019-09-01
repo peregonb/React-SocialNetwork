@@ -1,10 +1,24 @@
 import "./index.css";
 import * as serviceWorker from "./serviceWorker";
-import state from "./redux/state";
-import {rerenderEntireTree} from "./render";
+import store from "./redux/state";
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
 
+let rerenderEntireTree = state => {
+  ReactDOM.render(
+    <App
+      state={state}
+      dispatch={store.dispatch.bind(store)}
+    />,
+    document.getElementById("root")
+  );
+};
 
-rerenderEntireTree(state);
+store.subscribe(rerenderEntireTree);
+
+rerenderEntireTree(store.getState());
 
 
 

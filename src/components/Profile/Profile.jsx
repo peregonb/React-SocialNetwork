@@ -2,9 +2,7 @@ import React from "react";
 import s from "./Profile.module.scss";
 import Posts from "./Posts/Posts";
 
-
-
-const Profile = (props) => {
+const Profile = props => {
   return (
     <div>
       <div className={s.block}>
@@ -17,7 +15,11 @@ const Profile = (props) => {
           <div className={s.excerpt}>Обычный парень, мечтатель</div>
         </div>
       </div>
-      <Posts postData={props.state.postData} addPost={props.addPost} />
+      <Posts
+        postData={props.profilePage.postData}
+        newPostText={props.profilePage.newPostText}
+        dispatch={props.dispatch}
+      />
     </div>
   );
 };
