@@ -21,10 +21,7 @@
   font-size: 14px;
   display: flex;
   position: relative;
-}
-
-[class^="icon-"],
-[class*=" icon-"] {
+  
   &:before {
     font-size: 15px;
     margin-right: 7px;

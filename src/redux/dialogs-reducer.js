@@ -1,35 +1,8 @@
-const ADD_POST = "ADD-POST",
-  ADD_MESSAGE = "ADD-MESSAGE",
-  UPDATE_NEW_POST_TEXT = "UPDATE-NEW-POST-TEXT",
+const ADD_MESSAGE = "ADD-MESSAGE",
   UPDATE_NEW_MESSAGE_TEXT = "UPDATE-NEW-MESSAGE-TEXT";
 
-let store = {
-  _state: {
-    profilePage: {
-      postData: [
-        {
-          id: 0,
-          message: "Всем привет я поэт",
-          name: "Богдан Перегон",
-          likeCount: 4
-        },
-        {
-          id: 1,
-          message: "Твоя мама - толстуха",
-          name: "Богдан Перегон",
-          likeCount: 6
-        },
-        {
-          id: 2,
-          message: "Твой дядя самых честных правил",
-          name: "Богдан Перегон",
-          likeCount: 8
-        }
-      ],
-      newPostText: "somevalue"
-    },
-    dialogsPage: {
-      messageData: [
+let initialState = {
+    messageData: [
         { id: 0, message: "Привет", extraClass: "false" },
         { id: 1, message: "Как там твой курс по реакту?", extraClass: "true" },
         { id: 2, message: "Все отлично, все клубнично", extraClass: "false" }
@@ -51,66 +24,33 @@ let store = {
         }
       ],
       newMessageText: "message!!!"
-    }
-  },
-  _callSubscriber() {
-    console.log("state was changed");
-  },
+}
 
-  getState() {
-    return this._state;
-  },
-  subscribe(observer) {
-    this._callSubscriber = observer;
-  },
-
-  dispatch(action) {
-    if (action.type === ADD_POST) {
-      let newPost = {
-        id: 3,
-        message: this._state.profilePage.newPostText,
-        name: "Богдан Перегон",
-        likeCount: 0
-      };
-      this._state.profilePage.postData.push(newPost);
-      this._state.profilePage.newPostText = "";
-      this._callSubscriber(this._state);
-    } else if (action.type === ADD_MESSAGE) {
+const dialogsReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case ADD_MESSAGE:
       let newMessage = {
-        id: 3,
-        message: this._state.dialogsPage.newMessageText,
+        id: 3, 
+        message: state.newMessageText,
         extraClass: "true"
       };
-      this._state.dialogsPage.messageData.push(newMessage);
-      this._state.dialogsPage.newMessageText = "";
-      this._callSubscriber(this._state);
-    } else if (action.type === UPDATE_NEW_POST_TEXT) {
-      this._state.profilePage.newPostText = action.newText;
-      this._callSubscriber(this._state);
-    } else if (action.type === UPDATE_NEW_MESSAGE_TEXT) {
-      this._state.dialogsPage.newMessageText = action.newMessage;
-      this._callSubscriber(this._state);
-    }
+      state.messageData.push(newMessage);
+      state.newMessageText = "";
+      return state;
+
+    case UPDATE_NEW_MESSAGE_TEXT:
+      state.newMessageText = action.newMessage;
+      return state;
+
+    default:
+      return state;
   }
 };
 
-export const addPostActionCreator = () => {
-  return {
-    type: ADD_POST
-  };
-};
-export const updatePostTextActionCreator = text => {
-  return {
-    type: UPDATE_NEW_POST_TEXT,
-    newText: text
-  };
-};
 export const addMessageActionCreator = () => ({ type: ADD_MESSAGE });
 export const updateNewMessageTextActionCreator = messageText => ({
   type: UPDATE_NEW_MESSAGE_TEXT,
   newMessage: messageText
 });
 
-window.store = store;
-
-export default store;
+export default dialogsReducer;
