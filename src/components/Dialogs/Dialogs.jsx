@@ -3,26 +3,27 @@ import s from "./Dialogs.module.scss";
 // import {NavLink} from "react-router-dom";
 import DialogItem from "./DialogItem/DialogItem";
 import Message from "./Message/Message";
-// import $ from "jquery";
-import {addMessageActionCreator, updateNewMessageTextActionCreator} from "../../redux/dialogs-reducer";
-
 
 const Dialogs = props => {
-  let dialogsElements = props.dialogsPage.dialogsData.map(d => (
+  let state = props.dialogsPage;
+
+  let dialogsElements = state.dialogsData.map(d => (
     <DialogItem id={d.id} img={d.imageUrl} />
   ));
-  let messageElements = props.dialogsPage.messageData.map(m => (
+
+  let messageElements = state.messageData.map(m => (
     <Message id={m.id} message={m.message} extraClass={m.extraClass} />
   ));
 
   let textareaElement = React.createRef();
+
   let sendMessage = () => {
-    props.dispatch(addMessageActionCreator());
+    props.sendMessage(textareaElement);
   };
 
   let messageChange = () => {
     let messageText = textareaElement.current.value;
-    props.dispatch(updateNewMessageTextActionCreator(messageText));
+    props.updateNewMessageTextAction(messageText);
   };
 
   return (
@@ -35,7 +36,7 @@ const Dialogs = props => {
           ref={textareaElement}
           className={`${s.block} + ${s.writearea}`}
           placeholder="Введите сообщение"
-          value={props.dialogsPage.newMessageText}
+          value={state.newMessageText}
           onChange={messageChange}
         />
         <button onClick={sendMessage}>Отправить</button>

@@ -1,23 +1,23 @@
-import React from "react";
-import { addPostActionCreator, updatePostTextActionCreator } from "../../../redux/profile-reducer";
+import React from "react"; 
 import Post from "./Post/Post";
 import s from "./Posts.module.scss";
 
 
 const Posts = props => {
+
   let postElements = props.postData.map(p => (
     <Post id={p.id} message={p.message} name={p.name} like={p.likeCount} />
   ));
 
   let newPostElement = React.createRef();
 
-  let addPost = () => {
-    props.dispatch(addPostActionCreator());
+  let onAddPost = () => {
+    props.addPost();
   }; 
 
   let onPostChange = () => {
     let text = newPostElement.current.value;
-    props.dispatch(updatePostTextActionCreator(text));
+    props.updateNewPostText(text);
   };
 
   return (
@@ -29,7 +29,7 @@ const Posts = props => {
         placeholder="Что у вас нового?"
         value={props.newPostText}
       />
-      <button onClick={addPost}>Отправить</button>
+      <button onClick={onAddPost}>Отправить</button>
       {postElements}
     </div>
   );
