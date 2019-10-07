@@ -8,11 +8,11 @@ const Dialogs = props => {
   let state = props.dialogsPage;
 
   let dialogsElements = state.dialogsData.map(d => (
-    <DialogItem id={d.id} img={d.imageUrl} />
+    <DialogItem id={d.id} img={d.imageUrl} key={d.id} />
   ));
 
   let messageElements = state.messageData.map(m => (
-    <Message id={m.id} message={m.message} extraClass={m.extraClass} />
+    <Message id={m.id} message={m.message} extraClass={m.extraClass} key={m.id} />
   ));
 
   let textareaElement = React.createRef();

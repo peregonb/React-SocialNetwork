@@ -77,21 +77,26 @@
     -moz-osx-font-smoothing: grayscale;
    }
   }
-  .icon-like:before {
-    content: "\e905";
-  }
-  .icon-avatar:before {
-    content: "\e900";
-  }
-  .icon-envelope:before {
-    content: "\e901";
-  }
-  .icon-music-player:before {
-    content: "\e902";
-  }
-  .icon-newspaper:before {
-    content: "\e903";
-  }
-  .icon-settings-work-tool:before {
-    content: "\e904";
-  }
+  
+
+.icon-back-left-arrow-curve-symbol:before {
+  content: "\e900";
+}
+.icon-avatar:before {
+  content: "\e901";
+}
+.icon-envelope:before {
+  content: "\e902";
+}
+.icon-like:before {
+  content: "\e903";
+}
+.icon-music-player:before {
+  content: "\e904";
+}
+.icon-newspaper:before {
+  content: "\e905";
+}
+.icon-settings-work-tool:before {
+  content: "\e906";
+}

@@ -7,7 +7,9 @@ const Header = () => {
     <div className="">
       <header className={s.header}>
         <div className={`${s.wrap} wrap`}>
-          <div className={s.logo}>i<span>:</span>røvet</div>
+          <NavLink to="/profile"  className={s.logo} >
+          i<span>:</span>røvet
+        </NavLink>
           <div className={s.menu}>
             <div className={s.item}>Настройки</div>
             <div className={s.item}>Войти</div>
@@ -15,11 +17,12 @@ const Header = () => {
         </div>
       </header>
       <div className={s.footer}>
-        <NavLink to="/profile"  className={`${s.link} icon-avatar`} >
-          Профиль
-        </NavLink>
+      
         <NavLink to="/dialogs"  className={`${s.link} icon-envelope`} >
           Сообщения
+        </NavLink>
+        <NavLink to="/users"  className={`${s.link} icon-avatar`} >
+          Друзья
         </NavLink>
         <NavLink to="/music"  className={`${s.link} icon-music-player`} >
           Музыка
