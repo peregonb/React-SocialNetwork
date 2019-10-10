@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/React-SocialNetwork/static/css/main.7ad2c26c.chunk.css",
+    "main.css": "/React-SocialNetwork/static/css/main.06ae3e1d.chunk.css",
     "main.js": "/React-SocialNetwork/static/js/main.04e2678a.chunk.js",
     "main.js.map": "/React-SocialNetwork/static/js/main.04e2678a.chunk.js.map",
     "runtime~main.js": "/React-SocialNetwork/static/js/runtime~main.ed9820ea.js",
@@ -8,9 +8,9 @@
     "static/js/2.9d02dee1.chunk.js": "/React-SocialNetwork/static/js/2.9d02dee1.chunk.js",
     "static/js/2.9d02dee1.chunk.js.map": "/React-SocialNetwork/static/js/2.9d02dee1.chunk.js.map",
     "index.html": "/React-SocialNetwork/index.html",
-    "precache-manifest.910d3b7e4f2551870ac58d03256fd73c.js": "/React-SocialNetwork/precache-manifest.910d3b7e4f2551870ac58d03256fd73c.js",
+    "precache-manifest.22ad10149c15ddc3544bbd599a36edbe.js": "/React-SocialNetwork/precache-manifest.22ad10149c15ddc3544bbd599a36edbe.js",
     "service-worker.js": "/React-SocialNetwork/service-worker.js",
-    "static/css/main.7ad2c26c.chunk.css.map": "/React-SocialNetwork/static/css/main.7ad2c26c.chunk.css.map",
+    "static/css/main.06ae3e1d.chunk.css.map": "/React-SocialNetwork/static/css/main.06ae3e1d.chunk.css.map",
     "static/media/App.scss": "/React-SocialNetwork/static/media/icomoon.a5520644.eot"
   }
 }
