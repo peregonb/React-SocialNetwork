@@ -5,7 +5,21 @@ let initialState = {
   messageData: [
     { id: 0, message: "Привет", extraClass: "false" },
     { id: 1, message: "Как там твой курс по реакту?", extraClass: "true" },
-    { id: 2, message: "Все отлично, все клубнично", extraClass: "false" }
+    { id: 2, message: "Все отлично, все клубнично", extraClass: "false" },
+    { id: 2, message: "Все отлично, все клубнично", extraClass: "false" },
+    { id: 2, message: "Все отлично, все клубнично", extraClass: "true" },
+    { id: 2, message: "Все отлично, все клубнично", extraClass: "true" },
+    { id: 2, message: "Все отлично, все клубнично", extraClass: "true" },
+    { id: 2, message: "Все отлично, все клубнично", extraClass: "true" },
+    { id: 2, message: "Все отлично, все клубнично", extraClass: "true" },{ id: 2, message: "Все отлично, все клубнично", extraClass: "true" },
+    { id: 2, message: "Все отлично, все клубнично", extraClass: "true" },
+    { id: 2, message: "Все отлично, все клубнично", extraClass: "true" },
+    { id: 2, message: "Все отлично, все клубнично", extraClass: "true" },
+    { id: 2, message: "Все отлично, все клубнично", extraClass: "true" },{ id: 2, message: "Все отлично, все клубнично", extraClass: "true" },
+    { id: 2, message: "Все отлично, все клубнично", extraClass: "true" },
+    { id: 2, message: "Все отлично, все клубнично", extraClass: "true" },
+    { id: 2, message: "Все отлично, все клубнично", extraClass: "true" },
+    { id: 2, message: "Все отлично, все клубнично", extraClass: "true" },
   ],
   dialogsData: [
     {

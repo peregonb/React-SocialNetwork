@@ -32,14 +32,21 @@ const Dialogs = props => {
 
       <div className={s.message_section}>
         <div className={`${s.block} + ${s.messages}`}>{messageElements}</div>
+        <div className={s.textareaWrapper}>
         <textarea
           ref={textareaElement}
-          className={`${s.block} + ${s.writearea}`}
+          className={`${s.block} + ${s.textarea}`}
           placeholder="Введите сообщение"
           value={state.newMessageText}
           onChange={messageChange}
         />
-        <button onClick={sendMessage}>Отправить</button>
+         <div className={s.buttonWrapper}>
+          <button className={s.buttonSend + ` icon-back-left-arrow-curve-symbol`} onClick={sendMessage}>
+            
+          </button>
+        </div>
+        </div>
+  
       </div>
     </div>
   );
