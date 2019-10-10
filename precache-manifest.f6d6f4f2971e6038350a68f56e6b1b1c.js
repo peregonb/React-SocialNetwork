@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b8604910d886e9eb890d2c9b2fb4a92f",
+    "revision": "83bffca58c6d0a14155c4a4ab8e9317d",
     "url": "/React-SocialNetwork/index.html"
   },
   {
-    "revision": "61c4cf41b0b267eb9828",
-    "url": "/React-SocialNetwork/static/css/main.d15fa588.chunk.css"
+    "revision": "544e819c0e42289355c7",
+    "url": "/React-SocialNetwork/static/css/main.f9053974.chunk.css"
   },
   {
-    "revision": "bce5e0a8816e63081e58",
-    "url": "/React-SocialNetwork/static/js/2.9d54572f.chunk.js"
+    "revision": "a7bdc90907e63bd9f588",
+    "url": "/React-SocialNetwork/static/js/2.9d02dee1.chunk.js"
   },
   {
-    "revision": "61c4cf41b0b267eb9828",
-    "url": "/React-SocialNetwork/static/js/main.8a6f043e.chunk.js"
+    "revision": "544e819c0e42289355c7",
+    "url": "/React-SocialNetwork/static/js/main.04e2678a.chunk.js"
   },
   {
     "revision": "d5676b975d81e162e3ce",
@@ -80,19 +80,19 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/React-SocialNetwork/static/media/OpenSans.90327f5a.woff"
   },
   {
-    "revision": "2cfe592cac88044edc3e9a78251228a9",
-    "url": "/React-SocialNetwork/static/media/icomoon.2cfe592c.woff"
+    "revision": "1be499995167bb9d46c7ed6b42114020",
+    "url": "/React-SocialNetwork/static/media/icomoon.1be49999.woff"
   },
   {
-    "revision": "8413830bee8f6de34b224474ffad15da",
-    "url": "/React-SocialNetwork/static/media/icomoon.8413830b.eot"
+    "revision": "86c8a78c2848b9e7e48dc0d3ea535862",
+    "url": "/React-SocialNetwork/static/media/icomoon.86c8a78c.ttf"
   },
   {
-    "revision": "adc0025117317ba53492f5bdd2b9d5ad",
-    "url": "/React-SocialNetwork/static/media/icomoon.adc00251.svg"
+    "revision": "961d7bfcea1371877dd0282ca7bcde97",
+    "url": "/React-SocialNetwork/static/media/icomoon.961d7bfc.svg"
   },
   {
-    "revision": "b3170fec0edb0de802f61b4c0dff526e",
-    "url": "/React-SocialNetwork/static/media/icomoon.b3170fec.ttf"
+    "revision": "a5520644a12e6853b62a3c6da82de68d",
+    "url": "/React-SocialNetwork/static/media/icomoon.a5520644.eot"
   }
 ]);
