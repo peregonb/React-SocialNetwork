@@ -14,6 +14,7 @@ const Post = (props) => {
           <div className={s.name}>{props.name}</div>
         <div className={s.text}>{props.message}</div>
         <div className={`${s.like} icon-like`}>{props.like}</div>
+        <div className={`${s.repost} icon-back-left-arrow-curve-symbol`}>{props.like}</div>
         </div>
       </div>
     );

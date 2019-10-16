@@ -6,6 +6,17 @@
     align-items: stretch;
     width: 100%;
     flex-flow: row wrap;
+    position: relative;
+    &:after {
+        content: "";
+        width: calc(33.333% - 15px);
+        @include r(920){
+            width: calc(50% - 10px);
+        }
+        @include r(480){
+            width: 100%;
+        }
+      }
 }
 
 .item {

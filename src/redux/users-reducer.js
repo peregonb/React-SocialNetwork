@@ -4,7 +4,6 @@ const FOLLOW = "FOLLOW",
 
 let initialState = {
   users: [
-    
   ],
   newPostText: ""
 };
