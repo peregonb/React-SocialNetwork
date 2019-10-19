@@ -1,4 +1,5 @@
 import React from "react";
+import Firebase from "firebase";
 import Header from "./components/Header/Header";
 import Sidebar from "./components/Sidebar/Sidebar";
 import Profile from "./components/Profile/Profile";
@@ -11,6 +12,8 @@ import UsersContainer from "./components/Users/UsersContainer";
 import Settings from "./components/Settings/Settings";
 
 const App = props => {
+
+console.log(Firebase)
   return (
     <BrowserRouter>
       <div className="wrapper">

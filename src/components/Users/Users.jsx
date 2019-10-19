@@ -4,14 +4,21 @@ import * as Axios from "axios";
 import userPhoto from "../../img/user-small.png";
 
 class Users extends React.Component {
-  constructor(props) {
-    super(props);
-    Axios.get("https://social-network.samuraijs.com/api/1.0/users").then(
+  
+  componentDidMount() {
+    Axios.get("https://react-sn-f6e7a.firebaseio.com/users.json").then(
       response => {
-        this.props.setUsers(response.data.items);
+        this.props.setUsers(response.data);
+        console.log(response.data[0])
       }
     );
+    
+
   }
+
+ 
+   
+  
 
   render() {
     return (
@@ -21,25 +28,26 @@ class Users extends React.Component {
             <div
               className={s.img}
               style={
-                // {backgroundImage: 'url(' + u.photos.small == null ? u.photos.small : userPhoto + ')'}
+                // {backgroundImage: 'url(' + u.photo == null ? u.photo : userPhoto + ')'}
                 {
                   backgroundImage:
-                    u.photos.small != null
-                      ? "url('" + u.photos.small + "')"
+                    u.photo.length
+                      ? "url('"+ u.photo +"')"
                       : "url('" + userPhoto + "')"
                 }
               }
             ></div>
 
-            <div className={s.name}>{u.name}</div>
+            <div className={s.name}>{u.fullName}</div>
             <div className={s.country}>
-              {"u.location.country, u.location.city"}
+              {u.location.country + " " + u.location.city}
             </div>
             <div className={s.status}>{u.status}</div>
             {u.followed ? (
               <button
                 onClick={() => {
                   this.props.unfollow(u.id);
+                  this.unfollow(u.id)
                 }}
               >
                 Отписаться

@@ -76,7 +76,8 @@
         font-size: 12px;
     }
     @include r(420){
-        top: 70px;
+        top: 85px;
+        left: 20px;
     }
     &:before{
         color: black;
