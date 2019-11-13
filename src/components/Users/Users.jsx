@@ -3,6 +3,7 @@ import s from './Users.module.scss'
 import userPhoto from '../../img/user-small.png'
 
 let Users = props => {
+  debugger
   let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize)
   let pages = []
   for (let i = 1; i <= pagesCount; i++) {
