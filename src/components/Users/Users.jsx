@@ -1,9 +1,9 @@
 import React from 'react'
 import s from './Users.module.scss'
 import userPhoto from '../../img/user-small.png'
+import { PaginationUsers } from './PaginationUsers'
 
 let Users = props => {
-  debugger
   let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize)
   let pages = []
   for (let i = 1; i <= pagesCount; i++) {
@@ -11,20 +11,6 @@ let Users = props => {
   }
   return (
     <div className={s.wrap}>
-      <div className={s.pagi}>
-        {pages.map(p => {
-          return (
-            <span
-              onClick={() => {
-                props.onPageChange(p)
-              }}
-              className={props.currentPage === p && s.selected}>
-              {p}
-            </span>
-          )
-        })}
-      </div>
-
       <div className={s.wrapper}>
         {props.users.map(u => (
           <div key={u.id} className={s.item}>
@@ -62,6 +48,13 @@ let Users = props => {
           </div>
         ))}
       </div>
+
+      <PaginationUsers
+        pagesCount={pagesCount}
+        pages={pages}
+        onPageChange={props.onPageChange}
+        currentPage={props.currentPage}
+      />
     </div>
   )
 }

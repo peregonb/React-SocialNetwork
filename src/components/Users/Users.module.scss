@@ -92,11 +92,42 @@
 .selected{
     font-weight: bold;
 }
+
  
 .pagi{
     span{
         margin-right: 5px;
         cursor: pointer;
+        &.naviBack{
+            margin-right: 10px;
+            @include r(480){
+                margin-right: 5px;
+            }
+        }
+        &.naviNext{
+            margin-left: 5px;
+            margin-right: 0;
+            @include r(480){
+                margin-left: 0px;
+                
+            }
+        }
+    }
+    overflow: hidden;
+    position: relative;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 1px 0 0 #d7d8db, 0 0 0 1px #e3e4e8;
+    margin: 15px 0 0;
+    padding: 15px;
+    display: inline-flex;
+    @include r(480){
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    @include r(360){
+        font-size: 11.5px;
     }
 }
 
