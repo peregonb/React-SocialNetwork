@@ -1,65 +1,113 @@
 @mixin r($point) {
-    @media (max-width: $point + px) { @content; }
+  @media (max-width: $point + px) {
+    @content;
+  }
 }
 
-.body{
-    width: calc(100% - 150px);
-    padding-left: 40px;
-        @include r(1340){
-            padding-left: 20px;
-        }
+.body {
+  width: calc(100% - 150px);
+  padding-left: 40px;
+  @include r(1340) {
+    padding-left: 20px;
+  }
 }
-.block{
-    position: relative;
-    background: #fff;
-    border-radius: 4px;
-    box-shadow: 0 1px 0 0 #d7d8db, 0 0 0 1px #e3e4e8;
-    margin: 15px 0 0;
-    padding: 15px;
-    display: flex;
-    justify-content: flex-start;
 
-    @include r(420){
-        flex-direction: column;
+.block {
+  position: relative;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 1px 0 0 #d7d8db, 0 0 0 1px #e3e4e8;
+  margin: 15px 0 0;
+  padding: 15px;
+  display: flex;
+  justify-content: flex-start;
+
+  @include r(420) {
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    }
+  }
 }
-.avatar{
-    height: 200px;
-    width: 200px;
-    border-radius: 100%;
-    box-shadow: 0 0 10px rgba(black, .3);
-    @include r(768){
-        width: 120px;
-        height: 120px;
-    }
+
+.avatar {
+  height: 200px;
+  width: 200px;
+  border-radius: 100%;
+  box-shadow: 0 0 10px rgba(black, .3);
+  @include r(768) {
+    width: 120px;
+    height: 120px;
+  }
+  @include r(420) {
+    width: 100px;
+    height: 100px;
+
+  }
+}
+
+.avatar[src=""] {
+  background: rgba(#000, .2);
+}
+
+.description {
+  padding-left: 20px;
+  padding-top: 10px;
+  overflow: hidden;
+  @include r(420) {
+    padding-left: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.name {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.excerpt {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.social {
+display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    flex-grow: 1;
+    padding-right: 10px;
     @include r(420){
-        width: 100px;
-        height: 100px;
-        
-    }
-}
-.avatar[src=""]{
-    background: rgba(#000, .2);
-}
-.description{
-    padding-left: 20px;
-    padding-top: 10px;
-    overflow: hidden;
-    @include r(420){
-        padding-left: 0px;
-        display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        padding-right: 0;
         justify-content: center;
-        align-items: center;
+        margin-top: 15px;
     }
 }
-.name{
-    font-size: 20px;
-    font-weight: 500;
-}
-.excerpt{
-    font-size: 14px;
-    margin-top: 10px;
+
+.socialMedia {
+    display: flex;
+  svg {
+    height: 30px;
+    width: 30px;
+    margin-bottom: 7px;
+    border-radius: 100%;
+      @include r(420){
+          margin-bottom: 0;
+          margin-right: 5px;
+
+    }
+  }
+
+  &:last-child {
+    svg {
+      margin-bottom: 0;
+        @include r(420){
+            margin-right: 0;
+
+    }
+    }
+  }
 }

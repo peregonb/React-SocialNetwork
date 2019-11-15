@@ -1,91 +1,102 @@
 @mixin r($point) {
-    @media (max-width: $point + px) { @content; }
+  @media (max-width: $point + px) {
+    @content;
+  }
 }
 
-.block{
-    position: relative;
-    background: #fff;
-    border-radius: 4px;
-    box-shadow: 0 1px 0 0 #d7d8db, 0 0 0 1px #e3e4e8;
-    margin: 15px 0 0;
-    padding: 15px 15px 30px 15px;
-    display: flex;
-    justify-content: flex-start;
+.block {
+  position: relative;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 1px 0 0 #d7d8db, 0 0 0 1px #e3e4e8;
+  margin: 15px 0 0;
+  padding: 15px 15px 30px 15px;
+  display: flex;
+  justify-content: flex-start;
 }
 
-.img{
-    height: 60px;
-    width: 60px;
-    border-radius: 100%;
-    @include r(420){
-        width: 50px;
-        height: 50px;
-    }
+.img {
+  height: 60px;
+  width: 60px;
+  max-width: 60px;
+  min-width: 60px;
+  border-radius: 100%;
+  @include r(420) {
+    width: 50px;
+    height: 50px;
+    max-width: 50px;
+    min-width: 50px;
+  }
 }
 
-.text{
-    
+.text {
+
 }
 
-.right{
-    padding-left: 15px;
+.right {
+  padding-left: 15px;
 }
 
-.name{
-    font-weight: 500;
-    @include r(600){
-        font-size: 14px;
-    }
-}
-.text{
+.name {
+  font-weight: 500;
+  @include r(600) {
     font-size: 14px;
-    margin-top: 5px;
-    // width: calc(100% - 30px);
-    @include r(600){
-        font-size: 12px;
-    }
+  }
 }
-.like{
-    position: absolute;
-    top: 80px;
+
+.text {
+  font-size: 14px;
+  margin-top: 5px;
+  // width: calc(100% - 30px);
+  @include r(600) {
+    font-size: 12px;
+  }
+}
+
+.like {
+  position: absolute;
+  top: 80px;
+  left: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  @include r(600) {
+    font-size: 12px;
+  }
+  @include r(420) {
+    top: 70px;
+  }
+
+  &:before {
+    font-size: 12px;
+    font-weight: 600;
+    margin-right: 2px;
+    @include r(600) {
+      font-size: 10px;
+    }
+  }
+}
+
+.repost {
+  position: absolute;
+  top: 80px;
+  left: 50px;
+  font-size: 14px;
+  cursor: pointer;
+  @include r(600) {
+    font-size: 12px;
+  }
+  @include r(420) {
+    top: 85px;
     left: 20px;
-    font-size: 14px;
-    cursor: pointer;
-    @include r(600){
-        font-size: 12px;
-    }
-    @include r(420){
-        top: 70px;
-    }
-    &:before{
-        font-size: 12px;
+  }
+
+  &:before {
+    color: black;
+    font-size: 12px;
     font-weight: 600;
     margin-right: 2px;
-    @include r(600){
-        font-size: 10px;
+    @include r(600) {
+      font-size: 10px;
     }
-    }
-}
-.repost{
-    position: absolute;
-    top: 80px;
-    left: 50px;
-    font-size: 14px;
-    cursor: pointer;
-    @include r(600){
-        font-size: 12px;
-    }
-    @include r(420){
-        top: 85px;
-        left: 20px;
-    }
-    &:before{
-        color: black;
-        font-size: 12px;
-    font-weight: 600;
-    margin-right: 2px;
-    @include r(600){
-        font-size: 10px;
-    }
-    }
+  }
 }

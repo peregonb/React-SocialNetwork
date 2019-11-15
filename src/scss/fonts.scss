@@ -60,7 +60,7 @@
     font-weight: normal;
     font-style: normal;
   }
-  
+
   [class^="icon-"], [class*=" icon-"] {
    &:before{
         /* use !important to prevent issues with browser extensions that change fonts */
@@ -71,32 +71,77 @@
     font-variant: normal;
     text-transform: none;
     line-height: 1;
-  
+
     /* Better Font Rendering =========== */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
    }
   }
-  
 
-.icon-back-left-arrow-curve-symbol:before {
+
+.icon-avatar:before {
   content: "\e900";
 }
-.icon-avatar:before {
+.icon-back-left-arrow-curve-symbol:before {
   content: "\e901";
 }
-.icon-envelope:before {
+.icon-dribbble .path1:before {
   content: "\e902";
+  color: rgb(242, 103, 152);
 }
-.icon-like:before {
+.icon-dribbble .path2:before {
   content: "\e903";
+  margin-left: -1em;
+  color: rgb(241, 242, 242);
 }
-.icon-music-player:before {
+.icon-envelope:before {
   content: "\e904";
 }
-.icon-newspaper:before {
+.icon-facebook:before {
   content: "\e905";
+  color: rgb(59, 89, 152);
+}
+
+.icon-instagram:before {
+  content: "\e907";
+  color: #6a453b;
+}
+.icon-like:before {
+  content: "\e908";
+}
+.icon-linkedin .path1:before {
+  content: "\e909";
+  color: rgb(0, 122, 185);
+}
+.icon-linkedin .path2:before {
+  content: "\e90a";
+  margin-left: -1em;
+  color: rgb(241, 242, 242);
+}
+.icon-music-player:before {
+  content: "\e90b";
+}
+.icon-newspaper:before {
+  content: "\e90c";
 }
 .icon-settings-work-tool:before {
-  content: "\e906";
+  content: "\e90d";
+}
+.icon-twitter .path1:before {
+  content: "\e90e";
+  color: rgb(85, 172, 238);
+}
+.icon-twitter .path2:before {
+  content: "\e90f";
+  margin-left: -1em;
+  color: rgb(241, 242, 242);
+}
+.icon-vk .path1:before {
+  content: "\e910";
+  color: rgb(77, 118, 161);
+}
+.icon-vk .path2:before {
+  content: "\e911";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
 }

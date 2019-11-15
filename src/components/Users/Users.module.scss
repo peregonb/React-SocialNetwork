@@ -62,10 +62,12 @@
 .img {
     min-height: 100px;
     min-width: 100px;
+    max-width: 100px;
     border-radius: 100%;
     background-size: cover;
     background-position: center;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    margin: 0 auto;
 }
 
 .name {
