@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "466dabda65e9daa4a84618d5ea230af6",
+    "revision": "d0c6aa27619cd207d5e0a3f085af0662",
     "url": "/React-SocialNetwork/index.html"
   },
   {
-    "revision": "19f591020ad118a74df1",
-    "url": "/React-SocialNetwork/static/css/main.ac0b223e.chunk.css"
+    "revision": "b004d2efe30110cd9551",
+    "url": "/React-SocialNetwork/static/css/main.46616ce2.chunk.css"
   },
   {
-    "revision": "e9b9e1cceec5dde1def1",
-    "url": "/React-SocialNetwork/static/js/2.2c4f5dd9.chunk.js"
+    "revision": "13d852846f6f2d956a95",
+    "url": "/React-SocialNetwork/static/js/2.ceacc4de.chunk.js"
   },
   {
-    "revision": "19f591020ad118a74df1",
-    "url": "/React-SocialNetwork/static/js/main.096c7136.chunk.js"
+    "revision": "b004d2efe30110cd9551",
+    "url": "/React-SocialNetwork/static/js/main.02d54fe6.chunk.js"
   },
   {
     "revision": "d5676b975d81e162e3ce",
@@ -80,19 +80,27 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/React-SocialNetwork/static/media/OpenSans.90327f5a.woff"
   },
   {
-    "revision": "1be499995167bb9d46c7ed6b42114020",
-    "url": "/React-SocialNetwork/static/media/icomoon.1be49999.woff"
+    "revision": "0b78dcaf77eed3c995409489061d1c29",
+    "url": "/React-SocialNetwork/static/media/icomoon.0b78dcaf.svg"
   },
   {
-    "revision": "86c8a78c2848b9e7e48dc0d3ea535862",
-    "url": "/React-SocialNetwork/static/media/icomoon.86c8a78c.ttf"
+    "revision": "39c92395dc6680a79ada492316063456",
+    "url": "/React-SocialNetwork/static/media/icomoon.39c92395.woff"
   },
   {
-    "revision": "961d7bfcea1371877dd0282ca7bcde97",
-    "url": "/React-SocialNetwork/static/media/icomoon.961d7bfc.svg"
+    "revision": "4c484d926e23cd5c9ded202ee1cbda28",
+    "url": "/React-SocialNetwork/static/media/icomoon.4c484d92.eot"
   },
   {
-    "revision": "a5520644a12e6853b62a3c6da82de68d",
-    "url": "/React-SocialNetwork/static/media/icomoon.a5520644.eot"
+    "revision": "5b110b782ead5490be0616f859d23944",
+    "url": "/React-SocialNetwork/static/media/icomoon.5b110b78.ttf"
+  },
+  {
+    "revision": "efce8d7ca91b1eef70701ce5d3f1cb6c",
+    "url": "/React-SocialNetwork/static/media/preloader.efce8d7c.svg"
+  },
+  {
+    "revision": "8889b0fc2f02006a07042b6b4bc65aa4",
+    "url": "/React-SocialNetwork/static/media/user.8889b0fc.svg"
   }
 ]);
