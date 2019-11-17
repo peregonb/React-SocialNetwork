@@ -1,26 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0e5080b6-707a-4397-86ca-0e316c461394" name="Default" comment="migrate to php storm">
-      <change afterPath="$PROJECT_DIR$/src/components/Profile/ProfileContainer.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/Socials.jsx" afterDir="false" />
+    <list default="true" id="0e5080b6-707a-4397-86ca-0e316c461394" name="Default" comment="socials">
+      <change afterPath="$PROJECT_DIR$/src/components/Header/NightMode.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.prettierrc" beforeDir="false" afterPath="$PROJECT_DIR$/.prettierrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/asset-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/service-worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/service-worker.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Profile/Posts/Post/Post.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/Posts/Post/Post.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Profile/Profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/Profile.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Profile/Profile.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/Profile.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/ProfileContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/ProfileContainer.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileInfo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileInfo.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Users/PaginationUsers.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Users/PaginationUsers.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/Socials.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/Socials.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Users/Users.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Users/Users.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Users/Users.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Users/Users.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Users/UsersContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Users/UsersContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fonts/icomoon.eot" beforeDir="false" afterPath="$PROJECT_DIR$/src/fonts/icomoon.eot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fonts/icomoon.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/fonts/icomoon.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fonts/icomoon.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/fonts/icomoon.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fonts/icomoon.woff" beforeDir="false" afterPath="$PROJECT_DIR$/src/fonts/icomoon.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/profile-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/profile-reducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/fonts.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/fonts.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/normalize.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/normalize.scss" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,7 +39,8 @@
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="$PROJECT_DIR$/node_modules/eslint" />
     <property name="nodejs_interpreter_path" value="/usr/local/bin/node" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
@@ -66,7 +61,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="npm.start">
     <configuration default="true" type="CodeceptionConfigurationType" factoryName="Codeception">
       <PhpTestRunnerSettings />
       <method />
@@ -95,6 +90,32 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="deploy" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="deploy" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.start" />
+        <item itemvalue="npm.deploy" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -108,7 +129,8 @@
       <updated>1563751293347</updated>
       <workItem from="1563751295187" duration="2739000" />
       <workItem from="1573693734639" duration="628000" />
-      <workItem from="1573694403680" duration="11772000" />
+      <workItem from="1573694403680" duration="13610000" />
+      <workItem from="1573826429568" duration="11357000" />
     </task>
     <task id="LOCAL-00001" summary="migrate to php storm">
       <created>1563751581482</created>
@@ -117,7 +139,14 @@
       <option name="project" value="LOCAL" />
       <updated>1563751581482</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="socials">
+      <created>1573785597009</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1573785597010</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -138,6 +167,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="migrate to php storm" />
-    <option name="LAST_COMMIT_MESSAGE" value="migrate to php storm" />
+    <MESSAGE value="socials" />
+    <option name="LAST_COMMIT_MESSAGE" value="socials" />
   </component>
 </project>

@@ -20,7 +20,7 @@ const App = props => {
           <div className="content-wrap wrap">
             <Sidebar />
             <div className="content-right">
-              <Route path="/profile" render={() => <ProfileContainer />} />
+              <Route path="/profile/:userId?" render={() => <ProfileContainer />} />
               <Route path="/dialogs" render={() => <DialogsContainer />} />
               <Route path="/users" render={() => <UsersContainer />} />
               <Route path="/music" render={() => <Music />} />

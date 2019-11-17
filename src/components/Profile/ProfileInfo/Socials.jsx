@@ -2,54 +2,68 @@ import React from "react";
 import s from "../Profile.module.scss";
 
 const Socials = props => {
-    let Facebook = () => {
-        if (props.profile.contacts.facebook) {
-            return (
-                <a href={`https://${props.profile.contacts.facebook}`} target="_blank" className={s.socialMedia}>
-                    <svg enable-background="new 0 0 112.196 112.196" version="1.1" viewBox="0 0 112.2 112.2"
-                         xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="56.098" cy="56.098" r="56.098" fill="#3B5998"/>
-                        <path
-                            d="M70.201,58.294h-10.01v36.672H45.025V58.294h-7.213V45.406h7.213v-8.34   c0-5.964,2.833-15.303,15.301-15.303L71.56,21.81v12.51h-8.151c-1.337,0-3.217,0.668-3.217,3.513v7.585h11.334L70.201,58.294z"
-                            fill="#fff"/>
-                    </svg>
-                </a>
-            )
+    class Facebook extends React.Component {
+        constructor(props) {
+            super(props);
+            this.state = {
+                hover: this.props.color
+            }
         }
-        else return null
+
+        render() {
+            if (this.props.link) {
+                return (
+                    <a href={`https://${this.props.link}`} target="_blank" className={s.socialMedia}
+                       onMouseEnter={() => {
+                           this.setState({hover: this.props.hoverColor})
+                       }}
+                       onMouseLeave={() => {
+                           this.setState({hover: this.props.color})
+                       }}>
+                        <svg enableBackground="new 0 0 112.196 112.196" version="1.1" viewBox="0 0 112.2 112.2"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="56.098" cy="56.098" r="56.098" fill={this.state.hover}
+                                    style={{transition: 'fill 300ms'}}/>
+                            <path
+                                d="M70.201,58.294h-10.01v36.672H45.025V58.294h-7.213V45.406h7.213v-8.34   c0-5.964,2.833-15.303,15.301-15.303L71.56,21.81v12.51h-8.151c-1.337,0-3.217,0.668-3.217,3.513v7.585h11.334L70.201,58.294z"
+                                fill="#fff"/>
+                        </svg>
+                    </a>
+                )
+            } else return null
+        }
     }
 
-    let Vk = () => {
-        if (props.profile.contacts.vk) {
-            return (<a href={`https://${props.profile.contacts.vk}`} target="_blank" className={s.socialMedia}>
-                <svg enable-background="new 0 0 112.196 112.196" version="1.1" viewBox="0 0 112.2 112.2"
+    let Vk = props => {
+        if (props.link) {
+            return (<a href={`https://${props.link}`} target="_blank" className={s.socialMedia}>
+                <svg enableBackground="new 0 0 112.196 112.196" version="1.1" viewBox="0 0 112.2 112.2"
                      xmlns="http://www.w3.org/2000/svg">
                     <circle cx="56.098" cy="56.098" r="56.098" fill="#4D76A1"/>
                     <path
                         d="m53.979 80.702h4.403s1.33-0.146 2.009-0.878c0.625-0.672 0.605-1.934 0.605-1.934s-0.086-5.908 2.656-6.778c2.703-0.857 6.174 5.71 9.853 8.235 2.782 1.911 4.896 1.492 4.896 1.492l9.837-0.137s5.146-0.317 2.706-4.363c-0.2-0.331-1.421-2.993-7.314-8.463-6.168-5.725-5.342-4.799 2.088-14.702 4.525-6.031 6.334-9.713 5.769-11.29-0.539-1.502-3.867-1.105-3.867-1.105l-11.076 0.069s-0.821-0.112-1.43 0.252c-0.595 0.357-0.978 1.189-0.978 1.189s-1.753 4.667-4.091 8.636c-4.932 8.375-6.904 8.817-7.71 8.297-1.875-1.212-1.407-4.869-1.407-7.467 0-8.116 1.231-11.5-2.397-12.376-1.204-0.291-2.09-0.483-5.169-0.514-3.952-0.041-7.297 0.012-9.191 0.94-1.26 0.617-2.232 1.992-1.64 2.071 0.732 0.098 2.39 0.447 3.269 1.644 1.135 1.544 1.095 5.012 1.095 5.012s0.652 9.554-1.523 10.741c-1.493 0.814-3.541-0.848-7.938-8.446-2.253-3.892-3.954-8.194-3.954-8.194s-0.328-0.804-0.913-1.234c-0.71-0.521-1.702-0.687-1.702-0.687l-10.525 0.069s-1.58 0.044-2.16 0.731c-0.516 0.611-0.041 1.875-0.041 1.875s8.24 19.278 17.57 28.993c8.555 8.907 18.27 8.322 18.27 8.322z"
-                        clip-rule="evenodd" fill="#fff" fill-rule="evenodd"/>
+                        clipRule="evenodd" fill="#fff" fillRule="evenodd"/>
                 </svg>
             </a>)
-        }
-        else return null
+        } else return null
     }
 
-    let Instagram = () => {
-        if (props.profile.contacts.instagram) {
-            return (<a href={`https://${props.profile.contacts.instagram}`} target="_blank" className={s.socialMedia}>
+    let Instagram = props => {
+        if (props.link) {
+            return (<a href={`https://${props.link}`} target="_blank" className={s.socialMedia}>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89.758 89.758">
                     <defs>
                         <radialGradient id="a" cx="21" cy="89" r="89" gradientUnits="userSpaceOnUse">
-                            <stop offset="0" stop-color="#fccc63"/>
-                            <stop offset=".081" stop-color="#fbb655"/>
-                            <stop offset=".135" stop-color="#fbad50"/>
-                            <stop offset=".317" stop-color="#e95950"/>
-                            <stop offset=".418" stop-color="#dc515d"/>
-                            <stop offset=".504" stop-color="#cd486b"/>
-                            <stop offset=".661" stop-color="#bc2a8d"/>
-                            <stop offset=".745" stop-color="#a631a0"/>
-                            <stop offset=".871" stop-color="#8a3ab9"/>
-                            <stop offset="1" stop-color="#4c68d7"/>
+                            <stop offset="0" stopColor="#fccc63"/>
+                            <stop offset=".081" stopColor="#fbb655"/>
+                            <stop offset=".135" stopColor="#fbad50"/>
+                            <stop offset=".317" stopColor="#e95950"/>
+                            <stop offset=".418" stopColor="#dc515d"/>
+                            <stop offset=".504" stopColor="#cd486b"/>
+                            <stop offset=".661" stopColor="#bc2a8d"/>
+                            <stop offset=".745" stopColor="#a631a0"/>
+                            <stop offset=".871" stopColor="#8a3ab9"/>
+                            <stop offset="1" stopColor="#4c68d7"/>
                         </radialGradient>
                     </defs>
                     <g fill="url(#a)">
@@ -62,27 +76,25 @@ const Socials = props => {
                     </g>
                 </svg>
             </a>)
-        }
-        else return null
+        } else return null
     }
 
-    let Email = () => {
-        if (props.profile.contacts.mainLink) {
-            return (<a href={`mailto:${props.profile.contacts.mainLink}`} target="_blank" className={s.socialMedia}>
-                <svg enable-background="new 0 0 299.997 299.997" version="1.1" viewBox="0 0 300 300"
+    let Email = props => {
+        if (props.link) {
+            return (<a href={`mailto:${props.link}`} target="_blank" className={s.socialMedia}>
+                <svg enableBackground="new 0 0 299.997 299.997" version="1.1" viewBox="0 0 300 300"
                      xmlns="http://www.w3.org/2000/svg">
                     <path
                         d="m150 0c-82.839 0-150 67.158-150 150 0 82.837 67.156 150 150 150s150-67.163 150-150c0-82.839-67.161-150-150-150zm3e-3 52.686 88.763 55.35h-177.53l88.763-55.35zm89.869 143.74h-9e-3c0 8.878-7.195 16.072-16.072 16.072h-147.58c-8.878 0-16.072-7.195-16.072-16.072v-84.865c0-0.939 0.096-1.852 0.252-2.749l84.808 52.883c0.104 0.065 0.215 0.109 0.322 0.169 0.112 0.062 0.226 0.122 0.34 0.179 0.599 0.309 1.216 0.558 1.847 0.721 0.065 0.018 0.13 0.026 0.195 0.041 0.692 0.163 1.393 0.265 2.093 0.265h5e-3 0.01c0.7 0 1.401-0.099 2.093-0.265 0.065-0.016 0.13-0.023 0.195-0.041 0.63-0.163 1.245-0.412 1.847-0.721 0.114-0.057 0.228-0.117 0.34-0.179 0.106-0.06 0.218-0.104 0.322-0.169l84.808-52.883c0.156 0.897 0.252 1.808 0.252 2.749v84.865z"/>
                 </svg>
             </a>)
-        }
-        else return null
+        } else return null
     }
 
-    let Twitter = () => {
-        if (props.profile.contacts.twitter) {
-            return (<a href={`https://${props.profile.contacts.twitter}`} target="_blank" className={s.socialMedia}>
-                <svg enable-background="new 0 0 112.197 112.197" version="1.1" viewBox="0 0 112.2 112.2"
+    let Twitter = props => {
+        if (props.link) {
+            return (<a href={`https://${props.link}`} target="_blank" className={s.socialMedia}>
+                <svg enableBackground="new 0 0 112.197 112.197" version="1.1" viewBox="0 0 112.2 112.2"
                      xmlns="http://www.w3.org/2000/svg">
                     <circle cx="56.099" cy="56.098" r="56.098" fill="#55ACEE"/>
                     <path
@@ -90,14 +102,13 @@ const Socials = props => {
                         fill="#ffffff"/>
                 </svg>
             </a>)
-        }
-        else return null
+        } else return null
     }
 
-    let Website = () => {
-        if (props.profile.contacts.website) {
-            return (<a href={`https://${props.profile.contacts.website}`} target="_blank" className={s.socialMedia}>
-                <svg enable-background="new 0 0 112.196 112.196" version="1.1" viewBox="0 0 112.2 112.2"
+    let Website = props => {
+        if (props.link) {
+            return (<a href={`https://${props.link}`} target="_blank" className={s.socialMedia}>
+                <svg enableBackground="new 0 0 112.196 112.196" version="1.1" viewBox="0 0 112.2 112.2"
                      xmlns="http://www.w3.org/2000/svg">
                     <circle cx="56.098" cy="56.098" r="56.098" fill="rgb(0, 132, 31)"/>
                     <path
@@ -105,18 +116,17 @@ const Socials = props => {
                         fill="#ffffff"/>
                 </svg>
             </a>)
-        }
-        else return null
+        } else return null
     }
 
     return (
         <div className={s.social}>
-            <Facebook/>
-            <Vk/>
-            <Instagram/>
-            <Email/>
-            <Twitter/>
-            <Website/>
+            <Facebook link={props.profile.contacts.facebook} color="#3B5998" hoverColor="#333333"/>
+            <Vk link={props.profile.contacts.vk}/>
+            <Instagram link={props.profile.contacts.instagram}/>
+            <Email link={props.profile.contacts.mainLink}/>
+            <Twitter link={props.profile.contacts.twitter}/>
+            <Website link={props.profile.contacts.website}/>
         </div>
     )
 }
