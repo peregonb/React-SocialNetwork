@@ -9,6 +9,7 @@ const Sidebar = () => {
 
   return (
     <div className={s.sidebar}>
+    <div className={s.sidebarFixed}>
       {/* <div className={`${s.item} icon-avatar`}>
         <NavLink to="/profile" activeClassName={s.active}>Профиль</NavLink>
       </div> */}
@@ -27,6 +28,7 @@ const Sidebar = () => {
       {/* <div className={s.item}>
         <NavLink to="/settings" activeClassName={s.active}>Настройки</NavLink>
       </div> */}
+    </div>
     </div>
   );
 };

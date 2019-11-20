@@ -2,11 +2,13 @@ import React from "react";
 import s from "./Header.module.scss";
 import {NavLink} from "react-router-dom";
 import NightMode from "./NightMode";
+import HeaderMobile from "./HeaderMobile";
 
-const Header = () => {
+const Header = (props) => {
+    // debugger
     return (
         <div className="">
-            <header className={s.header}>
+            <div className={s.header}>
                 <div className={`${s.wrap} wrap`}>
                     <NavLink to="/profile" className={s.logo}>
                         i<span>:</span>røvet
@@ -14,25 +16,12 @@ const Header = () => {
                     <div className={s.menu}>
                         <NightMode/>
                         <div className={s.item}>Настройки</div>
-                        <div className={s.item}>Войти</div>
+                        {props.isAuth ? <div className={s.item}>{props.login}</div> : <NavLink to={'/login'} className={s.item}>Войти</NavLink>}
                     </div>
                 </div>
-            </header>
-            <div className={s.footer}>
-
-                <NavLink to="/dialogs" className={`${s.link} icon-envelope`}>
-                    Сообщения
-                </NavLink>
-                <NavLink to="/users" className={`${s.link} icon-avatar`}>
-                    Друзья
-                </NavLink>
-                <NavLink to="/music" className={`${s.link} icon-music-player`}>
-                    Музыка
-                </NavLink>
-                <NavLink to="/news" className={`${s.link} icon-newspaper`}>
-                    Новости
-                </NavLink>
             </div>
+
+            <HeaderMobile/>
         </div>
     );
 };

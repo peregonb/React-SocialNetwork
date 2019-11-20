@@ -1,5 +1,4 @@
 import React from 'react'
-import Header from './components/Header/Header'
 import Sidebar from './components/Sidebar/Sidebar'
 import DialogsContainer from './components/Dialogs/DialogsContainer'
 import { BrowserRouter, Route } from 'react-router-dom'
@@ -9,13 +8,14 @@ import News from './components/News/News'
 import UsersContainer from './components/Users/UsersContainer'
 import Settings from './components/Settings/Settings'
 import ProfileContainer from "./components/Profile/ProfileContainer";
+import HeaderContainer from "./components/Header/HeaderContainer";
 
 const App = props => {
 
   return (
     <BrowserRouter>
       <div className="wrapper">
-        <Header />
+        <HeaderContainer />
         <div className="content">
           <div className="content-wrap wrap">
             <Sidebar />

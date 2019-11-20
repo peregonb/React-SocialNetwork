@@ -17,12 +17,20 @@
   background: #fff;
   border-radius: 4px;
   box-shadow: 0 1px 0 0 #d7d8db, 0 0 0 1px #e3e4e8;
-  margin: 15px 0 0;
+  margin: 15px 15px 0 0;
   padding: 15px;
   display: flex;
-  justify-content: flex-start;
-
-  @include r(420) {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  @include r(920) {
+    margin: 15px 0 0 0;
+    width: 100%;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  @include r(480) {
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -34,13 +42,16 @@
   width: 200px;
   border-radius: 100%;
   box-shadow: 0 0 10px rgba(black, .3);
-  @include r(768) {
-    width: 120px;
-    height: 120px;
+  @include r(920) {
+    width: 160px;
+    height: 160px;
+  }
+  @include r(600) {
+    border-radius: 100%;
   }
   @include r(420) {
-    width: 100px;
-    height: 100px;
+    width: 140px;
+    height: 140px;
 
   }
 }
@@ -50,11 +61,17 @@
 }
 
 .description {
-  padding-left: 20px;
-  padding-top: 10px;
+  margin-top: 20px;
   overflow: hidden;
+  @include r(920) {
+    margin-top: 0;
+  }
+  @include r(600) {
+    margin-top: 15px;
+  }
+
   @include r(420) {
-    padding-left: 0px;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -65,49 +82,72 @@
 .name {
   font-size: 20px;
   font-weight: 500;
+  text-align: center;
 }
 
 .excerpt {
   font-size: 14px;
   margin-top: 10px;
+  text-align: center;
 }
 
 .social {
-display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-end;
-    flex-grow: 1;
-    padding-right: 10px;
-    @include r(420){
-        flex-direction: row;
-        padding-right: 0;
-        justify-content: center;
-        margin-top: 15px;
-    }
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+  flex-grow: 1;
+  margin-top: 18px;
+  @include r(420) {
+    flex-direction: row;
+    padding-right: 0;
+    justify-content: center;
+    margin-top: 15px;
+  }
 }
 
 .socialMedia {
-    display: flex;
-  svg {
-    height: 30px;
-    width: 30px;
-    margin-bottom: 7px;
-    border-radius: 100%;
-      @include r(420){
-          margin-bottom: 0;
-          margin-right: 5px;
+  display: flex;
 
+  svg {
+    height: 28px;
+    width: 28px;
+    margin-right: 5px;
+    border-radius: 100%;
+
+    @include r(420) {
+      margin-bottom: 0;
     }
   }
 
   &:last-child {
     svg {
-      margin-bottom: 0;
-        @include r(420){
-            margin-right: 0;
+      margin-right: 0;
+      @include r(420) {
+        margin-right: 0;
 
+      }
     }
-    }
+  }
+}
+
+.profileWrapper {
+  display: flex;
+  align-items: flex-start;
+  @include r(920) {
+    flex-direction: column;
+
+  }
+}
+
+.blockRight {
+  @include r(920) {
+    margin-left: 30px;
+    margin-top: 10px;
+  }
+  @include r(480) {
+    margin-left: 0;
+    margin-top: 0;
+    margin-bottom: 5px;
   }
 }
