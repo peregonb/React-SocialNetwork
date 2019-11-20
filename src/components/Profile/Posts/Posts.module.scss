@@ -1,6 +1,4 @@
-@mixin r($point) {
-    @media (max-width: $point + px) { @content; }
-}
+@import "../../../scss/resources";
 
 .block{
     position: relative;
@@ -88,4 +86,14 @@ font-size: 16px;
     justify-content: space-between;
     align-items: center;
     margin-top: 15px;
+}
+
+@include nignt {
+  .block {
+    background: $nightLightGrey;
+    box-shadow: 0 1px 0 0 $nightLightGrey, 0 0 0 1px $nightLightGrey;
+  }
+    .buttonSend{
+        background-color: $nightOrange;
+    }
 }

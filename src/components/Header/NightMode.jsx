@@ -15,12 +15,12 @@ class NightMode extends React.Component {
         if (this.state.buttonClass === s.nightModeSwitch) {
             this.setState({buttonClass: `${s.nightModeSwitch} ${s.active}`});
             this.setState({tooltipMessage: "Дневной режим"});
-            document.body.classList.add('night-mode')
+            document.body.setAttribute("theme", "night");
         }
         else{
             this.setState({buttonClass: s.nightModeSwitch});
             this.setState({tooltipMessage: "Ночной режим"});
-            document.body.classList.remove('night-mode')
+            document.body.setAttribute("theme", "day");
         }
     }
 

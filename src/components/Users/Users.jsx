@@ -17,8 +17,7 @@ let Users = props => {
                     <div key={u.id} className={s.item}>
                         <NavLink to={'/profile/id' + u.id}>
                             <div className={s.img} style={
-                                // {backgroundImage: 'url(' + u.photos.small == null ? u.photos.small : userPhoto + ')'}
-                                {backgroundImage: u.photos.small !== null ? "url('" + u.photos.small + "')" : "url('" + userPhoto + "')"}
+                                {backgroundImage: u.photos.small ? "url('" + u.photos.small + "')" : "url('" + userPhoto + "')"}
                             }/>
                             <div className={s.name}>{u.name}</div>
                         </NavLink>
@@ -28,17 +27,15 @@ let Users = props => {
                         </div>
                         <div className={s.status}>{u.status}</div>
                         {u.followed ? (
-                            <button
-                                onClick={() => {
-                                    props.unfollow(u.id)
-                                }}>
+                            <button onClick={() => {
+                                props.unfollow(u.id)
+                            }}>
                                 Отписаться
                             </button>
                         ) : (
-                            <button
-                                onClick={() => {
-                                    props.follow(u.id)
-                                }}>
+                            <button onClick={() => {
+                                props.follow(u.id)
+                            }}>
                                 Подписаться
                             </button>
                         )}

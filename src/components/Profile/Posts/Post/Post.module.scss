@@ -1,8 +1,4 @@
-@mixin r($point) {
-  @media (max-width: $point + px) {
-    @content;
-  }
-}
+@import "../../../../scss/resources";
 
 .block {
   position: relative;
@@ -97,6 +93,18 @@
     margin-right: 2px;
     @include r(600) {
       font-size: 10px;
+    }
+  }
+}
+
+@include nignt{
+  .block{
+    background: $nightLightGrey;
+  box-shadow: 0 1px 0 0 $nightLightGrey, 0 0 0 1px $nightLightGrey;
+  }
+  .repost{
+    &:before{
+      color: #ffffff;
     }
   }
 }

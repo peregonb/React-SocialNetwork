@@ -16,7 +16,8 @@
     display: none;
   }
 }
-.sidebarFixed{
+
+.sidebarFixed {
   position: fixed;
 }
 
@@ -25,7 +26,7 @@
   font-size: 14px;
   display: flex;
   position: relative;
-  
+
   &:before {
     font-size: 15px;
     margin-right: 7px;
@@ -58,6 +59,18 @@
     color: black;
 
     //transition: color $t;
-    &.active {}
+    &.active {
+    }
+  }
+}
+
+@include nignt {
+  .item {
+    &:hover {
+      &:after {
+        background-color: rgba($nightOrange, 1);
+        transition: background-color .3s;
+      }
+    }
   }
 }

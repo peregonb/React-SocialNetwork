@@ -1,8 +1,4 @@
-@mixin r($point) {
-  @media (max-width: $point + px) {
-    @content;
-  }
-}
+@import "../../scss/resources";
 
 .body {
   width: calc(100% - 150px);
@@ -149,5 +145,12 @@
     margin-left: 0;
     margin-top: 0;
     margin-bottom: 5px;
+  }
+}
+
+@include nignt {
+  .block {
+    background: $nightLightGrey;
+    box-shadow: 0 1px 0 0 $nightLightGrey, 0 0 0 1px $nightLightGrey;
   }
 }

@@ -1,8 +1,4 @@
-@mixin r($point) {
-  @media (max-width: $point + px) {
-    @content;
-  }
-}
+@import "../../scss/resources";
 
 .header {
   position: fixed;
@@ -129,9 +125,10 @@
   height: 20px;
   width: 20px;
   position: relative;
-@include r(375) {
-  margin-right: -10px;
+  @include r(375) {
+    margin-right: -10px;
   }
+
   svg {
     position: absolute;
     left: 50%;
@@ -161,5 +158,11 @@
       pointer-events: none;
       transition: opacity .3s, visibility .3s;
     }
+  }
+}
+
+@include nignt {
+  .header, .footer {
+    background-color: $nightBlack;
   }
 }
