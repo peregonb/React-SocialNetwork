@@ -15,7 +15,7 @@ const Header = (props) => {
                     </NavLink>
                     <div className={s.menu}>
                         <NightMode/>
-                        <div className={s.item}>Настройки</div>
+                        {/*<div className={s.item}>Настройки</div>*/}
                         {props.isAuth ? <div className={s.item}>{props.login}</div> : <NavLink to={'/login'} className={s.item}>Войти</NavLink>}
                     </div>
                 </div>

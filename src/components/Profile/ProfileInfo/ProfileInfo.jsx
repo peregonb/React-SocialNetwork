@@ -2,7 +2,7 @@ import React from "react";
 import s from "../Profile.module.scss";
 import Preloader from "../../common/Preloader/preloader";
 import Socials from "./Socials";
-import userPhoto from '../../../img/user.svg';
+import userPhoto from '../../../assets/img/user.svg';
 
 const ProfileInfo = props => {
 

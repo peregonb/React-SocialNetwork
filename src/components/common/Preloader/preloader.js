@@ -1,4 +1,4 @@
-import preloader from '../../../img/preloader.svg'
+import preloader from '../../../assets/img/preloader.svg'
 import s from './preloader.module.scss'
 import React from 'react'
 

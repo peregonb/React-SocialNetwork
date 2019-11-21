@@ -1,8 +1,9 @@
 import React from 'react'
 import s from './Users.module.scss'
-import userPhoto from '../../img/user.svg'
+import userPhoto from '../../assets/img/user.svg'
 import {PaginationUsers} from './PaginationUsers'
 import {NavLink} from 'react-router-dom'
+import {followingAPI} from "../../api/api";
 
 let Users = props => {
     let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
@@ -28,13 +29,21 @@ let Users = props => {
                         <div className={s.status}>{u.status}</div>
                         {u.followed ? (
                             <button onClick={() => {
-                                props.unfollow(u.id)
+                                followingAPI.deleteUnfollow(u.id).then(data => {
+                                    if (data.resultCode === 0) {
+                                        props.unfollow(u.id)
+                                    }
+                                })
                             }}>
                                 Отписаться
                             </button>
                         ) : (
                             <button onClick={() => {
-                                props.follow(u.id)
+                                followingAPI.postFollow(u.id).then(data => {
+                                    if (data.resultCode === 0) {
+                                        props.follow(u.id)
+                                    }
+                                })
                             }}>
                                 Подписаться
                             </button>
@@ -43,7 +52,7 @@ let Users = props => {
                 ))}
             </div>
 
-            <PaginationUsers
+            < PaginationUsers
                 pagesCount={pagesCount}
                 pages={pages}
                 onPageChange={props.onPageChange}

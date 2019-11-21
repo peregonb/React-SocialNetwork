@@ -2,20 +2,69 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0e5080b6-707a-4397-86ca-0e316c461394" name="Default" comment="socials">
+      <change afterPath="$PROJECT_DIR$/src/api/api.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Dialogs/Dialogs.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/Dialogs.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Dialogs/Message/Message.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/Message/Message.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Header/Header.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/NightMode.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/NightMode.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/HeaderContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/HeaderContainer.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Profile/Posts/Post/Post.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/Posts/Post/Post.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Profile/Posts/Posts.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/Posts/Posts.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Profile/Profile.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/Profile.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/ProfileContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/ProfileContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileInfo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileInfo.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/Socials.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/Socials.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Sidebar/Sidebar.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Sidebar/Sidebar.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Users/Users.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Users/Users.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Users/Users.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Users/Users.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/main.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/resources.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/resources.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Users/UsersContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Users/UsersContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/Preloader/preloader.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Preloader/preloader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fonts/OpenSans-Bold.eot" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/fonts/OpenSans-Bold.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fonts/OpenSans-Bold.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/fonts/OpenSans-Bold.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fonts/OpenSans-Bold.woff" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/fonts/OpenSans-Bold.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fonts/OpenSans-Extrabold.eot" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/fonts/OpenSans-Extrabold.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fonts/OpenSans-Extrabold.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/fonts/OpenSans-Extrabold.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fonts/OpenSans-Extrabold.woff" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/fonts/OpenSans-Extrabold.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fonts/OpenSans-Light.eot" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/fonts/OpenSans-Light.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fonts/OpenSans-Light.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/fonts/OpenSans-Light.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fonts/OpenSans-Light.woff" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/fonts/OpenSans-Light.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fonts/OpenSans-Semibold.eot" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/fonts/OpenSans-Semibold.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fonts/OpenSans-Semibold.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/fonts/OpenSans-Semibold.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fonts/OpenSans-Semibold.woff" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/fonts/OpenSans-Semibold.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fonts/OpenSans.eot" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/fonts/OpenSans.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fonts/OpenSans.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/fonts/OpenSans.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fonts/OpenSans.woff" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/fonts/OpenSans.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fonts/icomoon.eot" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/fonts/icomoon.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fonts/icomoon.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/fonts/icomoon.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fonts/icomoon.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/fonts/icomoon.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fonts/icomoon.woff" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/fonts/icomoon.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/img/dribbble.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/dribbble.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/img/facebook.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/facebook.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/img/icomoon/avatar.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/icomoon/avatar.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/img/icomoon/back-left-arrow-curve-symbol.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/icomoon/back-left-arrow-curve-symbol.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/img/icomoon/envelope.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/icomoon/envelope.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/img/icomoon/like.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/icomoon/like.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/img/icomoon/moon-phase-outline.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/icomoon/moon-phase-outline.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/img/icomoon/music-player.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/icomoon/music-player.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/img/icomoon/newspaper.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/icomoon/newspaper.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/img/icomoon/settings-work-tool.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/icomoon/settings-work-tool.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/img/icomoon/sun.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/icomoon/sun.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/img/instagram.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/instagram.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/img/linkedin.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/linkedin.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/img/moon-phase-outline.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/moon-phase-outline.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/img/preloader.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/preloader.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/img/sun.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/sun.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/img/twitter.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/twitter.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/img/user-small.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/user-small.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/img/user.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/user.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/img/vk.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/vk.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scss/App.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/fonts.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scss/fonts.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scss/main.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/normalize.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scss/normalize.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/resources.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scss/resources.scss" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -46,6 +95,9 @@
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/assets" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/components/Header" />
       <recent name="$PROJECT_DIR$/src/components" />
@@ -136,7 +188,7 @@
       <workItem from="1573826429568" duration="11439000" />
       <workItem from="1574187208280" duration="9049000" />
       <workItem from="1574221899058" duration="503000" />
-      <workItem from="1574268820220" duration="11001000" />
+      <workItem from="1574268820220" duration="20218000" />
     </task>
     <task id="LOCAL-00001" summary="migrate to php storm">
       <created>1563751581482</created>
