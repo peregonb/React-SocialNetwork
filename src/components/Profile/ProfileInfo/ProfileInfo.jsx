@@ -12,13 +12,14 @@ const ProfileInfo = props => {
 
     return (
         <div className={s.block}>
-            <img src={props.profile.photos.large ? props.profile.photos.large : userPhoto} className={s.avatar} />
+            <img src={props.profile.photos.large ? props.profile.photos.large : userPhoto} className={s.avatar}/>
             <div className={s.blockRight}>
                 <div className={s.description}>
-                <div className={s.name}>{props.profile.fullName}</div>
-                <div className={s.excerpt}>{props.profile.aboutMe ? props.profile.aboutMe : <span style={{opacity: "0.5"}}>"Не заполнено"</span>}</div>
-            </div>
-            <Socials profile={props.profile}/>
+                    <div className={s.name}>{props.profile.fullName}</div>
+                    <div className={s.excerpt}>{props.profile.aboutMe ? props.profile.aboutMe :
+                        <span style={{opacity: "0.5"}}>"Не заполнено"</span>}</div>
+                </div>
+                <Socials profile={props.profile}/>
             </div>
         </div>
     )

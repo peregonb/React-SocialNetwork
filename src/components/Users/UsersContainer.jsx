@@ -8,7 +8,7 @@ import {
     setUsers,
     setCurrentPage,
     setTotalUsersCount,
-    setIsFetching,
+    setIsFetching, followDisabled,
 } from '../../redux/users-reducer'
 import {usersAPI} from "../../api/api";
 
@@ -48,6 +48,8 @@ class UsersContainer extends React.Component {
                         onPageChange={this.onPageChange}
                         follow={this.props.follow}
                         unfollow={this.props.unfollow}
+                        followDisabled={this.props.followDisabled}
+                        followDisabledValue={this.props.followDisabledValue}
                     />
                 )}
             </>
@@ -56,16 +58,24 @@ class UsersContainer extends React.Component {
 }
 
 let mapStateToProps = state => {
+    // debugger
     return {
         users: state.usersPage.users,
         pageSize: state.usersPage.pageSize,
         totalUsersCount: state.usersPage.totalUsersCount,
         currentPage: state.usersPage.currentPage,
         isFetching: state.usersPage.isFetching,
+        followDisabledValue: state.usersPage.followDisabledValue,
+        followDisabled: state.usersPage.followDisabled
     }
 }
 
-export default connect(
-    mapStateToProps,
-    {follow, unfollow, setUsers, setCurrentPage, setTotalUsersCount, setIsFetching}
-)(UsersContainer)
+export default connect(mapStateToProps, {
+    follow,
+    unfollow,
+    setUsers,
+    setCurrentPage,
+    setTotalUsersCount,
+    setIsFetching,
+    followDisabled,
+})(UsersContainer)

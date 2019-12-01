@@ -48,7 +48,6 @@
   @include r(420) {
     width: 140px;
     height: 140px;
-
   }
 }
 
@@ -94,11 +93,19 @@
   align-items: flex-end;
   flex-grow: 1;
   margin-top: 18px;
+
+  &:empty {
+    margin-top: 5px;
+  }
+
   @include r(420) {
     flex-direction: row;
     padding-right: 0;
     justify-content: center;
     margin-top: 15px;
+    &:empty {
+      margin-top: 5px;
+    }
   }
 }
 
@@ -132,7 +139,6 @@
   align-items: flex-start;
   @include r(920) {
     flex-direction: column;
-
   }
 }
 

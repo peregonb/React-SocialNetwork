@@ -28,21 +28,26 @@ let Users = props => {
                         </div>
                         <div className={s.status}>{u.status}</div>
                         {u.followed ? (
-                            <button onClick={() => {
+                            <button disabled={props.followDisabledValue.some(id => id === u.id)} onClick={() => {
+                                props.followDisabled(true, u.id);
                                 followingAPI.deleteUnfollow(u.id).then(data => {
                                     if (data.resultCode === 0) {
                                         props.unfollow(u.id)
                                     }
+                                    props.followDisabled(false, u.id);
                                 })
                             }}>
                                 Отписаться
                             </button>
                         ) : (
-                            <button onClick={() => {
+                            <button disabled={props.followDisabledValue.some(id => id === u.id)} onClick={() => {
+                                debugger
+                                props.followDisabled(true, u.id);
                                 followingAPI.postFollow(u.id).then(data => {
                                     if (data.resultCode === 0) {
                                         props.follow(u.id)
                                     }
+                                    props.followDisabled(false, u.id);
                                 })
                             }}>
                                 Подписаться
