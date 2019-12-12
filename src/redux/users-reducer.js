@@ -1,3 +1,5 @@
+import {followingAPI, usersAPI} from "../api/api";
+
 const FOLLOW = 'FOLLOW',
     UNFOLLOW = 'UNFOLLOW',
     SET_USERS = 'SET-USERS',
@@ -76,7 +78,7 @@ const usersReducer = (state = initialState, action) => {
 }
 
 export const follow = userID => {
-    return { 
+    return {
         type: FOLLOW,
         userID,
     }
@@ -118,6 +120,52 @@ export const setTotalUsersCount = totalUsersCount => {
     return {
         type: SET_TOTAL_USERS_COUNT,
         totalUsersCount,
+    }
+}
+
+export const getUsersTC = (currentPage, pageSize) => {
+    return dispatch => {
+        dispatch(setIsFetching(true));
+        usersAPI.getUsers(currentPage, pageSize).then(data => {
+            dispatch(setIsFetching(false));
+            dispatch(setUsers(data.items));
+            dispatch(setTotalUsersCount(data.totalCount));
+        })
+    }
+}
+
+export const changeUsersPageTC = (currentPage, pageSize, pageNumber) => {
+    return dispatch => {
+        dispatch(setCurrentPage(pageNumber));
+        dispatch(setIsFetching(true));
+        usersAPI.getUsers(pageNumber, pageSize).then(data => {
+            dispatch(setIsFetching(false));
+            dispatch(setUsers(data.items));
+        })
+    }
+}
+
+export const unfollowTC = (userId) => {
+    return dispatch => {
+        dispatch(followDisabled(true, userId));
+        followingAPI.deleteUnfollow(userId).then(data => {
+            if (data.resultCode === 0) {
+                dispatch(unfollow(userId))
+            }
+            dispatch(followDisabled(false, userId));
+        })
+    }
+}
+
+export const followTC = (userId) => {
+    return dispatch => {
+        dispatch(followDisabled(true, userId));
+        followingAPI.postFollow(userId).then(data => {
+            if (data.resultCode === 0) {
+                dispatch(follow(userId))
+            }
+            dispatch(followDisabled(false, userId));
+        })
     }
 }
 

@@ -3,7 +3,6 @@ import s from './Users.module.scss'
 import userPhoto from '../../assets/img/user.svg'
 import {PaginationUsers} from './PaginationUsers'
 import {NavLink} from 'react-router-dom'
-import {followingAPI} from "../../api/api";
 
 let Users = props => {
     let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
@@ -29,26 +28,13 @@ let Users = props => {
                         <div className={s.status}>{u.status}</div>
                         {u.followed ? (
                             <button disabled={props.followDisabledValue.some(id => id === u.id)} onClick={() => {
-                                props.followDisabled(true, u.id);
-                                followingAPI.deleteUnfollow(u.id).then(data => {
-                                    if (data.resultCode === 0) {
-                                        props.unfollow(u.id)
-                                    }
-                                    props.followDisabled(false, u.id);
-                                })
+                                props.unfollowTC(u.id)
                             }}>
                                 Отписаться
                             </button>
                         ) : (
                             <button disabled={props.followDisabledValue.some(id => id === u.id)} onClick={() => {
-                                debugger
-                                props.followDisabled(true, u.id);
-                                followingAPI.postFollow(u.id).then(data => {
-                                    if (data.resultCode === 0) {
-                                        props.follow(u.id)
-                                    }
-                                    props.followDisabled(false, u.id);
-                                })
+                                props.followTC(u.id)
                             }}>
                                 Подписаться
                             </button>

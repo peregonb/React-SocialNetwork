@@ -5,33 +5,19 @@ import Preloader from '../common/Preloader/preloader.js'
 import {
     follow,
     unfollow,
-    setUsers,
-    setCurrentPage,
-    setTotalUsersCount,
-    setIsFetching, followDisabled,
+    followDisabled, getUsersTC, changeUsersPageTC, followTC, unfollowTC,
 } from '../../redux/users-reducer'
-import {usersAPI} from "../../api/api";
 
 
 class UsersContainer extends React.Component {
     componentDidMount() {
-        let {currentPage, pageSize, setIsFetching, setUsers, setTotalUsersCount} = this.props;
-        setIsFetching(true);
-        usersAPI.getUsers(currentPage, pageSize).then(data => {
-            setIsFetching(false);
-            setUsers(data.items);
-            setTotalUsersCount(data.totalCount);
-        })
+        let {currentPage, pageSize, getUsersTC} = this.props;
+        getUsersTC(currentPage, pageSize);
     }
 
     onPageChange = pageNumber => {
-        let {pageSize, setIsFetching, setUsers, setCurrentPage} = this.props;
-        setCurrentPage(pageNumber);
-        setIsFetching(true);
-        usersAPI.getUsers(pageNumber, pageSize).then(data => {
-            setIsFetching(false);
-            setUsers(data.items);
-        })
+        let {currentPage, pageSize, changeUsersPageTC} = this.props;
+        changeUsersPageTC(currentPage, pageSize, pageNumber);
     }
 
     render() {
@@ -46,10 +32,9 @@ class UsersContainer extends React.Component {
                         currentPage={this.props.currentPage}
                         users={this.props.users}
                         onPageChange={this.onPageChange}
-                        follow={this.props.follow}
-                        unfollow={this.props.unfollow}
-                        followDisabled={this.props.followDisabled}
                         followDisabledValue={this.props.followDisabledValue}
+                        unfollowTC={this.props.unfollowTC}
+                        followTC={this.props.followTC}
                     />
                 )}
             </>
@@ -73,9 +58,9 @@ let mapStateToProps = state => {
 export default connect(mapStateToProps, {
     follow,
     unfollow,
-    setUsers,
-    setCurrentPage,
-    setTotalUsersCount,
-    setIsFetching,
     followDisabled,
+    getUsersTC,
+    changeUsersPageTC,
+    unfollowTC,
+    followTC,
 })(UsersContainer)

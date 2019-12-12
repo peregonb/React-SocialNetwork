@@ -7,14 +7,6 @@ const instance = Axios.create({
         "API-KEY": "9d7cf002-70ff-4a91-b4ad-b755f045cc45"
     }
 })
-const instanceSpotify = Axios.create({
-    withCredentials: true,
-    baseURL: 'https://api.spotify.com/v1/',
-    headers: {
-        'Authorization': 'Bearer ' + 'token'
-    }
-})
-
 export const usersAPI = {
     getUsers(currentPage = 1, pageSize) {
         return instance.get(`users?page=${currentPage}&count=${pageSize}`).then(response => response.data)
