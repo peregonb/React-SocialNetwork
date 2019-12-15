@@ -13,20 +13,24 @@ class NightMode extends React.Component {
 
     switchClick = () => {
         if (this.state.buttonClass === s.nightModeSwitch) {
-            this.setState({buttonClass: `${s.nightModeSwitch} ${s.active}`});
-            this.setState({tooltipMessage: "Дневной режим"});
+            this.setState({
+                buttonClass: `${s.nightModeSwitch} ${s.active}`,
+                tooltipMessage: "Дневной режим"
+            });
             document.body.setAttribute("theme", "night");
-        }
-        else{
-            this.setState({buttonClass: s.nightModeSwitch});
-            this.setState({tooltipMessage: "Ночной режим"});
+        } else {
+            this.setState({
+                buttonClass: s.nightModeSwitch,
+                tooltipMessage: "Ночной режим"
+            });
             document.body.setAttribute("theme", "day");
         }
     }
 
     render() {
         return (
-            <div className={this.state.buttonClass} onClick={this.switchClick} data-place="bottom" data-tip={this.state.tooltipMessage}>
+            <div className={this.state.buttonClass} onClick={this.switchClick} data-place="bottom"
+                 data-tip={this.state.tooltipMessage}>
                 <svg className={s.night} style={{height: "16px", width: "16px"}}
                      enableBackground="new 0 0 438.277 438.277" version="1.1" viewBox="0 0 438.28 438.28"
                      xmlns="http://www.w3.org/2000/svg">

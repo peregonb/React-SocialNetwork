@@ -7,6 +7,8 @@ import {
     unfollow,
     followDisabled, getUsersTC, changeUsersPageTC, followTC, unfollowTC,
 } from '../../redux/users-reducer'
+import {withAuthRedirect} from "../../hoc/withAuthRedirect";
+import {compose} from "redux";
 
 
 class UsersContainer extends React.Component {
@@ -43,7 +45,6 @@ class UsersContainer extends React.Component {
 }
 
 let mapStateToProps = state => {
-    // debugger
     return {
         users: state.usersPage.users,
         pageSize: state.usersPage.pageSize,
@@ -55,12 +56,16 @@ let mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, {
-    follow,
-    unfollow,
-    followDisabled,
-    getUsersTC,
-    changeUsersPageTC,
-    unfollowTC,
-    followTC,
-})(UsersContainer)
+
+export default compose(
+    connect(mapStateToProps, {
+        follow,
+        unfollow,
+        followDisabled,
+        getUsersTC,
+        changeUsersPageTC,
+        unfollowTC,
+        followTC,
+    }),
+    withAuthRedirect
+)(UsersContainer)
