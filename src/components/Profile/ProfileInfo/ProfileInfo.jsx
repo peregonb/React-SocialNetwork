@@ -3,6 +3,7 @@ import s from "../Profile.module.scss";
 import Preloader from "../../common/Preloader/preloader";
 import Socials from "./Socials";
 import userPhoto from '../../../assets/img/user.svg';
+import ProfileStatus from "./ProfileStatus";
 
 const ProfileInfo = props => {
 
@@ -16,8 +17,7 @@ const ProfileInfo = props => {
             <div className={s.blockRight}>
                 <div className={s.description}>
                     <div className={s.name}>{props.profile.fullName}</div>
-                    <div className={s.excerpt}>{props.profile.aboutMe ? props.profile.aboutMe :
-                        <span style={{opacity: "0.5"}}>"Не заполнено"</span>}</div>
+                    <ProfileStatus aboutMe={props.profile.aboutMe === null ? false : props.profile.aboutMe} status={props.status} updateStatus={props.updateStatus}/>
                 </div>
                 <Socials profile={props.profile}/>
             </div>

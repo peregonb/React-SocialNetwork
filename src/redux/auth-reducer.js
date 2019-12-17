@@ -39,7 +39,9 @@ export const getAuthTC = () => {
             if (data.resultCode === 0) {
                 let {id, login, email} = data.data;
                 dispatch(setAuthUserData(id, email, login))
+
             }
+
         })
     }
 }
