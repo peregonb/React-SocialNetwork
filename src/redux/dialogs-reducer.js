@@ -1,33 +1,10 @@
-const ADD_MESSAGE = "ADD-MESSAGE",
-    UPDATE_NEW_MESSAGE_TEXT = "UPDATE-NEW-MESSAGE-TEXT";
+const ADD_MESSAGE = "ADD-MESSAGE";
 
 let initialState = {
     messageData: [
         {id: 0, message: "Привет", extraClass: "false"},
         {id: 1, message: "Как там твой курс по реакту?", extraClass: "true"},
         {id: 2, message: "Все отлично, все клубнично", extraClass: "false"},
-        {id: 2, message: "Все отлично, все клубнично", extraClass: "false"},
-        {id: 2, message: "Все отлично, все клубнично", extraClass: "true"},
-        {id: 2, message: "Все отлично, все клубнично", extraClass: "true"},
-        {id: 2, message: "Все отлично, все клубнично", extraClass: "true"},
-        {id: 2, message: "Все отлично, все клубнично", extraClass: "true"},
-        {id: 2, message: "Все отлично, все клубнично", extraClass: "true"}, {
-            id: 2,
-            message: "Все отлично, все клубнично",
-            extraClass: "true"
-        },
-        {id: 2, message: "Все отлично, все клубнично", extraClass: "true"},
-        {id: 2, message: "Все отлично, все клубнично", extraClass: "true"},
-        {id: 2, message: "Все отлично, все клубнично", extraClass: "true"},
-        {id: 2, message: "Все отлично, все клубнично", extraClass: "true"}, {
-            id: 2,
-            message: "Все отлично, все клубнично",
-            extraClass: "true"
-        },
-        {id: 2, message: "Все отлично, все клубнично", extraClass: "true"},
-        {id: 2, message: "Все отлично, все клубнично", extraClass: "true"},
-        {id: 2, message: "Все отлично, все клубнично", extraClass: "true"},
-        {id: 2, message: "Все отлично, все клубнично", extraClass: "true"},
     ],
     dialogsData: [
         {
@@ -44,7 +21,7 @@ let initialState = {
             imageUrl: "https://avatarko.ru/img/kartinka/14/igrushka_mysh_13852.jpg"
         }
     ],
-    newMessageText: ""
+    // newMessageText: ""
 };
 
 const dialogsReducer = (state = initialState, action) => {
@@ -55,20 +32,12 @@ const dialogsReducer = (state = initialState, action) => {
         case ADD_MESSAGE: {
             let newMessage = {
                 id: 3,
-                message: state.newMessageText,
+                message: action.newMessageBody,
                 extraClass: "true"
             };
             return {
                 ...state,
-                newMessageText: "",
                 messageData: [...state.messageData, newMessage]
-            }
-        }
-
-        case UPDATE_NEW_MESSAGE_TEXT: {
-            return {
-                ...state,
-                newMessageText: action.newMessage
             }
         }
 
@@ -77,10 +46,7 @@ const dialogsReducer = (state = initialState, action) => {
     }
 };
 
-export const addMessageActionCreator = () => ({type: ADD_MESSAGE});
-export const updateNewMessageTextActionCreator = messageText => ({
-    type: UPDATE_NEW_MESSAGE_TEXT,
-    newMessage: messageText
-});
+export const addMessageActionCreator = (newMessageBody ) => ({type: ADD_MESSAGE, newMessageBody});
+
 
 export default dialogsReducer;

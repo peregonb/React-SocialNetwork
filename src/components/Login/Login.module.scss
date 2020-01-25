@@ -1,0 +1,15 @@
+form{
+  display: flex;
+  flex-direction: column;
+}
+.rememberWrap{
+  display: flex;
+  flex-direction: row;
+}
+.remember{
+-webkit-appearance: checkbox;
+  margin-right: 10px;
+}
+input{
+  margin-bottom: 10px;
+}

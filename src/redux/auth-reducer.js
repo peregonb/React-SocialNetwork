@@ -39,9 +39,17 @@ export const getAuthTC = () => {
             if (data.resultCode === 0) {
                 let {id, login, email} = data.data;
                 dispatch(setAuthUserData(id, email, login))
-
             }
+        })
+    }
+}
 
+export const postAuthTC = (formData) => {
+    return dispatch => {
+        authAPI.postAuth(formData).then(data => {
+            if (data.resultCode === 0) {
+                console.log('logged')
+            }
         })
     }
 }

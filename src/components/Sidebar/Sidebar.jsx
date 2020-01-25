@@ -10,9 +10,9 @@ const Sidebar = () => {
   return (
     <div className={s.sidebar}>
     <div className={s.sidebarFixed}>
-      {/* <div className={`${s.item} icon-avatar`}>
-        <NavLink to="/profile" activeClassName={s.active}>Профиль</NavLink>
-      </div> */}
+      {/* <div className={`${s.item} icon-avatar`}>*/}
+      {/*  <NavLink to="/homepage" activeClassName={s.active}>Профиль</NavLink>*/}
+      {/*</div>*/}
       <div className={`${s.item} icon-envelope`}>
         <NavLink to="/dialogs" activeClassName={s.active}>Сообщения</NavLink>
       </div>
@@ -24,6 +24,9 @@ const Sidebar = () => {
       </div>
       <div className={`${s.item} icon-music-player`}>
         <NavLink to="/music" activeClassName={s.active}>Музыка</NavLink>
+      </div>
+      <div className={s.item}>
+        <NavLink to="/login" activeClassName={s.active}>Login</NavLink>
       </div>
       {/* <div className={s.item}>
         <NavLink to="/settings" activeClassName={s.active}>Настройки</NavLink>

@@ -50,6 +50,7 @@
     "prettier": "^1.18.2",
     "react-select": "^3.0.8",
     "react-tooltip": "^3.11.1",
+    "redux-form": "^8.2.6",
     "spotify-web-api-js": "^1.2.0"
   }
 }

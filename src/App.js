@@ -11,28 +11,32 @@ import ProfileContainer from "./components/Profile/ProfileContainer";
 import HeaderContainer from "./components/Header/HeaderContainer";
 import Login from "./components/Login/Login";
 
-const App = () => {
+class App extends React.Component {
+    sidebar = <Sidebar/>;
 
-    return (
-        <BrowserRouter>
-            <div className="wrapper">
-                <HeaderContainer/>
-                <div className="content">
-                    <div className="content-wrap wrap">
-                        <Sidebar/>
-                        <div className="content-right">
-                            <Route path="/profile/:userId?" render={() => <ProfileContainer/>}/>
-                            <Route path="/dialogs" render={() => <DialogsContainer/>}/>
-                            <Route path="/users" render={() => <UsersContainer/>}/>
-                            <Route path="/music" render={() => <Music/>}/>
-                            <Route path="/news" render={() => <News/>}/>
-                            <Route path="/settings" render={() => <Settings/>}/>
-                            <Route path="/login" render={() => <Login/>}/>
+    render() {
+        return (
+                <BrowserRouter>
+                    <div className="wrapper">
+                        <HeaderContainer/>
+                        <div className="content">
+                            <div className="content-wrap wrap">
+                                {this.sidebar}
+                                <div className="content-right">
+                                    <Route path="/profile/:userId?" render={() => <ProfileContainer/>}/>
+                                    <Route path="/profile/homepage" render={() => <ProfileContainer/>}/>
+                                    <Route path="/dialogs" render={() => <DialogsContainer/>}/>
+                                    <Route path="/users" render={() => <UsersContainer/>}/>
+                                    <Route path="/music" render={() => <Music/>}/>
+                                    <Route path="/news" render={() => <News/>}/>
+                                    <Route path="/settings" render={() => <Settings/>}/>
+                                    <Route path="/login" render={() => <Login/>}/>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </BrowserRouter>
-    )
+                </BrowserRouter>
+        )
+    }
 }
-export default App
+export default App;

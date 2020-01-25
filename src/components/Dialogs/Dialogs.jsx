@@ -3,54 +3,50 @@ import s from './Dialogs.module.scss'
 import DialogItem from './DialogItem/DialogItem'
 import Message from './Message/Message'
 import {Redirect} from "react-router-dom";
+import {Field, reduxForm} from "redux-form";
 
 const Dialogs = props => {
-  let state = props.dialogsPage
+    let state = props.dialogsPage;
+    let dialogsElements = state.dialogsData.map(d => (
+        <DialogItem id={d.id} img={d.imageUrl} key={d.id}/>
+    ))
 
-  let dialogsElements = state.dialogsData.map(d => (
-    <DialogItem id={d.id} img={d.imageUrl} key={d.id} />
-  ))
+    // if (!props.isAuth) return <Redirect to={"/login"}/>
 
-  let messageElements = state.messageData.map(m => (
-    <Message id={m.id} message={m.message} extraClass={m.extraClass} key={m.id} />
-  ))
+    let addNewMessage = (values) => {
+        props.sendMessage(values.messageFormTextarea)
+    }
 
-  let textareaElement = React.createRef()
-
-  let sendMessage = () => {
-    props.sendMessage(textareaElement)
-  }
-
-  let messageChange = () => {
-    let messageText = textareaElement.current.value
-    props.updateNewMessageTextAction(messageText)
-  }
-
-  // if (!props.isAuth) return <Redirect to={"/login"}/>
-
-  return (
-    <div className={s.section}>
-      <div className={`${s.block} + ${s.dialogs}`}>{dialogsElements}</div>
-
-      <div className={s.message_section}>
-        <div className={`${s.block} + ${s.messages}`}>{messageElements}</div>
-        <div className={s.textareaWrapper}>
-          <textarea
-            ref={textareaElement}
-            className={`${s.block} + ${s.textarea}`}
-            placeholder="Введите сообщение"
-            value={state.newMessageText}
-            onChange={messageChange}
-          />
-          <div className={s.buttonWrapper}>
-            <button
-              className={s.buttonSend + ` icon-back-left-arrow-curve-symbol`}
-              onClick={sendMessage}></button>
-          </div>
+    return (
+        <div className={s.section}>
+            <div className={`${s.block} + ${s.dialogs}`}>{dialogsElements}</div>
+            <DialogsFormRedux state={props} onSubmit={addNewMessage}/>
         </div>
-      </div>
-    </div>
-  )
+    )
 }
+
+const DialogsForm = props => {
+    let state = props.state.dialogsPage;
+    let messageElements = state.messageData.map(m => (
+        <Message id={m.id} message={m.message} extraClass={m.extraClass} key={m.id}/>
+    ))
+
+
+    return (
+        <form className={s.message_section} onSubmit={props.handleSubmit}>
+            <div className={`${s.block} + ${s.messages}`}>{messageElements}</div>
+            <div className={s.textareaWrapper}>
+                <Field className={`${s.block} + ${s.textarea}`} component={"textarea"}
+                       name={"messageFormTextarea"} placeholder="Введите сообщение"/>
+                {/*<textarea value={state.newMessageText} onChange={messageChange}/>*/}
+                <div className={s.buttonWrapper}>
+                    <button className={s.buttonSend + ` icon-back-left-arrow-curve-symbol`}/>
+                </div>
+            </div>
+        </form>
+    )
+}
+
+const DialogsFormRedux = reduxForm({form: "dialogAddMessageForm"})(DialogsForm)
 
 export default Dialogs
