@@ -1,9 +1,8 @@
 import React from 'react'
 import s from './Dialogs.module.scss'
 import DialogItem from './DialogItem/DialogItem'
-import Message from './Message/Message'
 import {Redirect} from "react-router-dom";
-import {Field, reduxForm} from "redux-form";
+import DialogsFormRedux from "./DialogItem/DialogsForm";
 
 const Dialogs = props => {
     let state = props.dialogsPage;
@@ -25,28 +24,5 @@ const Dialogs = props => {
     )
 }
 
-const DialogsForm = props => {
-    let state = props.state.dialogsPage;
-    let messageElements = state.messageData.map(m => (
-        <Message id={m.id} message={m.message} extraClass={m.extraClass} key={m.id}/>
-    ))
-
-
-    return (
-        <form className={s.message_section} onSubmit={props.handleSubmit}>
-            <div className={`${s.block} + ${s.messages}`}>{messageElements}</div>
-            <div className={s.textareaWrapper}>
-                <Field className={`${s.block} + ${s.textarea}`} component={"textarea"}
-                       name={"messageFormTextarea"} placeholder="Введите сообщение"/>
-                {/*<textarea value={state.newMessageText} onChange={messageChange}/>*/}
-                <div className={s.buttonWrapper}>
-                    <button className={s.buttonSend + ` icon-back-left-arrow-curve-symbol`}/>
-                </div>
-            </div>
-        </form>
-    )
-}
-
-const DialogsFormRedux = reduxForm({form: "dialogAddMessageForm"})(DialogsForm)
 
 export default Dialogs

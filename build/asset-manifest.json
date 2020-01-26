@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/React-SocialNetwork/static/css/main.46616ce2.chunk.css",
-    "main.js": "/React-SocialNetwork/static/js/main.02d54fe6.chunk.js",
-    "main.js.map": "/React-SocialNetwork/static/js/main.02d54fe6.chunk.js.map",
+    "main.css": "/React-SocialNetwork/static/css/main.77a4e7f0.chunk.css",
+    "main.js": "/React-SocialNetwork/static/js/main.5c81dc3c.chunk.js",
+    "main.js.map": "/React-SocialNetwork/static/js/main.5c81dc3c.chunk.js.map",
     "runtime~main.js": "/React-SocialNetwork/static/js/runtime~main.ed9820ea.js",
     "runtime~main.js.map": "/React-SocialNetwork/static/js/runtime~main.ed9820ea.js.map",
-    "static/js/2.ceacc4de.chunk.js": "/React-SocialNetwork/static/js/2.ceacc4de.chunk.js",
-    "static/js/2.ceacc4de.chunk.js.map": "/React-SocialNetwork/static/js/2.ceacc4de.chunk.js.map",
+    "static/js/2.23edcb66.chunk.js": "/React-SocialNetwork/static/js/2.23edcb66.chunk.js",
+    "static/js/2.23edcb66.chunk.js.map": "/React-SocialNetwork/static/js/2.23edcb66.chunk.js.map",
     "index.html": "/React-SocialNetwork/index.html",
-    "precache-manifest.2556af9820954122f238a9a2b53d0ac9.js": "/React-SocialNetwork/precache-manifest.2556af9820954122f238a9a2b53d0ac9.js",
+    "precache-manifest.14b9ad41c6b81f7fb1e223dbe9d1d90f.js": "/React-SocialNetwork/precache-manifest.14b9ad41c6b81f7fb1e223dbe9d1d90f.js",
     "service-worker.js": "/React-SocialNetwork/service-worker.js",
-    "static/css/main.46616ce2.chunk.css.map": "/React-SocialNetwork/static/css/main.46616ce2.chunk.css.map",
+    "static/css/main.77a4e7f0.chunk.css.map": "/React-SocialNetwork/static/css/main.77a4e7f0.chunk.css.map",
     "static/media/App.scss": "/React-SocialNetwork/static/media/icomoon.5b110b78.ttf",
     "static/media/preloader.svg": "/React-SocialNetwork/static/media/preloader.efce8d7c.svg",
     "static/media/user.svg": "/React-SocialNetwork/static/media/user.8889b0fc.svg"

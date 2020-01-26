@@ -2,7 +2,10 @@ import React from "react";
 import Post from "./Post/Post";
 import s from "./Posts.module.scss";
 import {Field, reduxForm} from "redux-form";
+import {maxLengthCreator, requiredField} from "../../../utils/validators/validators";
+import {Textarea} from "../../common/FormsFields/formsFields";
 
+const maxLengthValidator = maxLengthCreator(30);
 const Posts = props => {
     let postElements = props.postData.map(p => (
         <Post
@@ -14,7 +17,7 @@ const Posts = props => {
         />
     ));
     let onFormSubmit = (value) => {
-      props.addPost(value.PostsFormTextarea)
+        props.addPost(value.PostsFormTextarea)
     }
 
     return (
@@ -28,17 +31,16 @@ const Posts = props => {
 const PostsForm = props => {
     return (
         <form className={s.textareaWrapper} onSubmit={props.handleSubmit}>
-            <Field component={"textarea"}
+            <Field component={Textarea}
                    className={`${s.block} ${s.textarea}`}
                    placeholder="Что у вас нового?"
-                   name="PostsFormTextarea"/>
-            <div className={s.buttonWrapper}>
-                <button className={s.buttonSend + ` icon-back-left-arrow-curve-symbol`}/>
-            </div>
+                   name="PostsFormTextarea"
+                   validate={[requiredField, maxLengthValidator]}
+            />
         </form>
     )
 }
 
-const PostsFormRedux = reduxForm({form : "PostsForm"}) (PostsForm);
+const PostsFormRedux = reduxForm({form: "PostsForm"})(PostsForm);
 
 export default Posts;

@@ -131,40 +131,6 @@ textarea.block {
   box-sizing: content-box;
 }
 
-.textarea {
-  width: 100%;
-  height: 22px;
-  transition: width .3s;
-  margin-top: 0;
-  @include r(420) {
-    font-size: 12px;
-    height: 18px;
-  }
-
-  &:focus {
-    &::placeholder {
-      color: transparent;
-      transition: color .3s;
-    }
-
-  }
-
-  &:not(:empty) {
-    width: calc(100% - 80px);
-    transition: width .3s;
-
-    ~ .buttonWrapper {
-      opacity: 1;
-      width: 40px;
-      visibility: visible;
-      transition: opacity .3s, width .3s;
-    }
-  }
-
-  &::placeholder {
-    transition: color .3s;
-  }
-}
 
 .buttonWrapper {
   display: flex;
