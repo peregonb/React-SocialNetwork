@@ -25,7 +25,7 @@ const Header = (props) => {
                                 <div className={s.item}>{props.login}</div>
                                 <div onClick={logout} className={s.item}>Выйти</div>
                             </>
-                            : <NavLink to={'/login'} className={s.item}>Войти</NavLink>}
+                            : null}
                     </div>
                 </div>
             </div>
