@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0e5080b6-707a-4397-86ca-0e316c461394" name="Default" comment="dialog redux-form">
-      <change afterPath="$PROJECT_DIR$/src/components/Dialogs/DialogItem/DialogsForm.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/common/FormsFields/formFields.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/common/FormsFields/formsFields.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/validators/validators.js" afterDir="false" />
+    <list default="true" id="0e5080b6-707a-4397-86ca-0e316c461394" name="Default" comment="redux-form validation">
+      <change afterPath="$PROJECT_DIR$/src/redux/app-reducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/asset-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/service-worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/service-worker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/Dialogs.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/Dialogs.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/Dialogs.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/Dialogs.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/scss/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scss/main.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/HeaderContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/HeaderContainer.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Login/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Login/Login.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Profile/Posts/Posts.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/Posts/Posts.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Profile/Posts/Posts.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/Posts/Posts.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/FormsFields/formFields.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/FormsFields/formFields.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/auth-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/auth-reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/redux-store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/redux-store.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -160,7 +159,9 @@
       <workItem from="1579008550680" duration="239000" />
       <workItem from="1579008797315" duration="182000" />
       <workItem from="1579009894271" duration="40000" />
-      <workItem from="1579010126869" duration="17264000" />
+      <workItem from="1579010126869" duration="17710000" />
+      <workItem from="1580151079232" duration="3815000" />
+      <workItem from="1580348909366" duration="5705000" />
     </task>
     <task id="LOCAL-00001" summary="migrate to php storm">
       <created>1563751581482</created>
@@ -211,7 +212,14 @@
       <option name="project" value="LOCAL" />
       <updated>1579975216103</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="redux-form validation">
+      <created>1580080790441</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1580080790441</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -238,6 +246,7 @@
     <MESSAGE value="hoc auth" />
     <MESSAGE value="profile status" />
     <MESSAGE value="dialog redux-form" />
-    <option name="LAST_COMMIT_MESSAGE" value="dialog redux-form" />
+    <MESSAGE value="redux-form validation" />
+    <option name="LAST_COMMIT_MESSAGE" value="redux-form validation" />
   </component>
 </project>

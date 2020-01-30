@@ -1,11 +1,15 @@
 import React from "react";
 import s from "./Header.module.scss";
-import {NavLink} from "react-router-dom";
+import {NavLink, Redirect} from "react-router-dom";
 import NightMode from "./NightMode";
 import HeaderMobile from "./HeaderMobile";
 
+
 const Header = (props) => {
-    // debugger
+    const logout = () => {
+        props.deleteAuthTC()
+    }
+
     return (
         <div className="">
             <div className={s.header}>
@@ -16,7 +20,12 @@ const Header = (props) => {
                     <div className={s.menu}>
                         <NightMode/>
                         {/*<div className={s.item}>Настройки</div>*/}
-                        {props.isAuth ? <div className={s.item}>{props.login}</div> : <NavLink to={'/login'} className={s.item}>Войти</NavLink>}
+                        {props.isAuth ?
+                            <>
+                                <div className={s.item}>{props.login}</div>
+                                <div onClick={logout} className={s.item}>Выйти</div>
+                            </>
+                            : <NavLink to={'/login'} className={s.item}>Войти</NavLink>}
                     </div>
                 </div>
             </div>

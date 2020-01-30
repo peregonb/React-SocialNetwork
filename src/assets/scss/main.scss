@@ -1,67 +1,92 @@
-body{
-    background: #edeef0;
-    &[theme="night"]{
-        background: $nightGrey;
-        *{
-            color: #ffffff;
-        }
+body {
+  background: #edeef0;
+
+  &[theme="night"] {
+    background: $nightGrey;
+
+    * {
+      color: #ffffff;
     }
-}
-.wrap{
-    width: 100%;
-    max-width: 992px;
-    padding: 0px 40px 0px 40px;
-    overflow-x: hidden;
-    @include r(1340){
-        padding: 0px 20px 0px 20px;
-    }
+  }
 }
 
-.content{
-    margin-top: 50px;
+.wrap {
+  width: 100%;
+  max-width: 992px;
+  padding: 0px 40px 0px 40px;
+  overflow-x: hidden;
+  @include r(1340) {
+    padding: 0px 20px 0px 20px;
+  }
+}
+
+.content {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+
+  &-wrap {
     display: flex;
     justify-content: center;
-    width: 100%;
-
-    &-wrap{
-        display: flex;
-        justify-content: center;
-        padding-bottom: 40px;
-        @include r(600){
-            padding-bottom: 70px;
-        }
+    padding-bottom: 40px;
+    @include r(600) {
+      padding-bottom: 70px;
     }
-    &-right{
-        width: calc(100% - 150px);
-        padding-left: 40px;
-            @include r(1340){
-                padding-left: 20px;
-            }
-            @include r(768){
-                width: calc(100% - 100px);
-            }
-            @include r(600){
-                padding: 0;
-                width: 100%;
-            }
-    } 
+  }
+
+  &-right {
+    width: calc(100% - 150px);
+    padding-left: 40px;
+    @include r(1340) {
+      padding-left: 20px;
+    }
+    @include r(768) {
+      width: calc(100% - 100px);
+    }
+    @include r(600) {
+      padding: 0;
+      width: 100%;
+    }
+  }
 }
 
-*{
-    box-sizing: border-box;
-    font-family: $montserat;
-    font-weight: 400;
+* {
+  box-sizing: border-box;
+  font-family: $montserat;
+  font-weight: 400;
 }
-a{
-    text-decoration: none;
-    color: black;
+
+a {
+  text-decoration: none;
+  color: black;
 }
 
 input,
-textarea{
-    -webkit-appearance: none;
-    border: none;
-    outline: none;
-    resize: none;
+textarea {
+  -webkit-appearance: none;
+  border: none;
+  outline: none;
+  resize: none;
 }
 
+body.login {
+  .content {
+    &-right {
+      width: 100%;
+      padding-left: 0;
+      @include r(1340) {
+        width: 100%;
+        padding-left: 0;
+      }
+      @include r(768) {
+        width: 100%;
+        padding-left: 0;
+      }
+      @include r(600) {
+        padding: 0;
+        width: 100%;
+      }
+    }
+  }
+}

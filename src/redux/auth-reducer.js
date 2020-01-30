@@ -1,4 +1,5 @@
 import {authAPI} from "../api/api";
+import {stopSubmit} from "redux-form";
 
 const SET_USER_DATA = "SET-USER-DATA";
 
@@ -16,7 +17,7 @@ const authReducer = (state = initialState, action) => {
             return {
                 ...state,
                 ...action.data,
-                isAuth: true
+                // isAuth: true
             };
 
         default:
@@ -24,34 +25,45 @@ const authReducer = (state = initialState, action) => {
     }
 };
 
-export const setAuthUserData = (userId, email, login) => {
+export const setAuthUserData = (userId, email, login, isAuth) => {
     return {
         type: SET_USER_DATA,
-        data: {userId, email, login},
+        data: {userId, email, login, isAuth},
         isAuth: true
     };
 };
 
 
-export const getAuthTC = () => {
-    return dispatch => {
-        authAPI.getAuth().then(data => {
+export const getAuthTC = () => dispatch => {
+        return authAPI.getAuth().then(data => {
             if (data.resultCode === 0) {
                 let {id, login, email} = data.data;
-                dispatch(setAuthUserData(id, email, login))
+                dispatch(setAuthUserData(id, email, login, true))
             }
         })
-    }
 }
 
-export const postAuthTC = (formData) => {
-    return dispatch => {
-        authAPI.postAuth(formData).then(data => {
-            if (data.resultCode === 0) {
-                console.log('logged')
-            }
-        })
-    }
+export const postAuthTC = (formData) => dispatch => {
+    authAPI.postAuth(formData.login, formData.password, formData.rememberMe).then(data => {
+        if (data.resultCode === 0) {
+            console.log('logged')
+            dispatch(getAuthTC())
+        }
+        else{
+            let message = data.messages > 0 ? data.messages[0] : "Some error"
+            dispatch(stopSubmit("login",{_error: message}));
+        }
+    })
 }
+
+export const deleteAuthTC = () => dispatch => {
+    authAPI.deleteAuth().then(data => {
+        if (data.resultCode === 0) {
+            console.log('unlogged')
+            dispatch(setAuthUserData(null, null, null, false))
+        }
+    })
+}
+
 
 export default authReducer;

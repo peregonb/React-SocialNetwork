@@ -1,20 +1,27 @@
 import React from 'react';
 import s from './Login.module.scss';
+import style from './../common/FormsFields/formFields.module.scss';
 import {Field, reduxForm} from "redux-form";
 import {postAuthTC} from "../../redux/auth-reducer";
 import {Input} from "../common/FormsFields/formsFields";
 import {requiredField} from "../../utils/validators/validators";
+import {connect} from "react-redux";
+import {Redirect} from "react-router-dom";
 
 
 export const LoginForm = (props) => {
     return (
         <form onSubmit={props.handleSubmit}>
-            <Field validate={[requiredField]} component={Input} name={'login'} className={s.login} placeholder={"Login"}/>
-            <Field validate={[requiredField]} component={Input} name={'password'} className={s.password} placeholder={"Password"}/>
+            <Field validate={[requiredField]} component={Input} name={'login'} className={s.login}
+                   placeholder={"Login"}/>
+            <Field validate={[requiredField]} component={Input} name={'password'} className={s.password}
+                   type={"password"}
+                   placeholder={"Password"}/>
             <div className={s.rememberWrap}>
                 <Field component={Input} name={'rememberMe'} type="checkbox" className={s.remember}/>
-                <label for={'rememberMe'}>remember me</label>
+                <label>remember me</label>
             </div>
+            {props.error && <div className={style.errorField}>{props.error}</div>}
             <button>Login</button>
         </form>
     )
@@ -28,10 +35,13 @@ class Login extends React.Component {
 
     onSubmit = (formData) => {
         console.log(formData);
-        postAuthTC(formData)
+        this.props.postAuthTC(formData)
     }
 
     render() {
+        if (this.props.isAuth) {
+            return <Redirect to={"/profile"}/>
+        }
         return (
             <div>
                 <h1>Login</h1>
@@ -41,4 +51,7 @@ class Login extends React.Component {
     }
 }
 
-export default Login;
+const mapStateToProps = (state) => ({
+        isAuth: state.auth.isAuth
+    })
+export default connect(mapStateToProps, {postAuthTC})(Login);
