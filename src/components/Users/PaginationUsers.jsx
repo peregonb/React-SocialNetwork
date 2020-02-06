@@ -2,6 +2,7 @@ import React from 'react'
 import s from './Users.module.scss'
 
 export let PaginationUsers = props => {
+    
     return (
         <div className={s.pagi}>
             {props.currentPage >= 5 ? (

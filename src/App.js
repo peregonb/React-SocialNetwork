@@ -42,7 +42,7 @@ class App extends React.Component {
                         {sidebar}
                         <div className="content-right">
                             <Route path="/profile/:userId?" render={() => <ProfileContainer/>}/>
-                            <Route path="/profile/homepage" render={() => <ProfileContainer/>}/>
+                            <Route path="/" exact render={() => <ProfileContainer/>}/>
                             <Route path="/dialogs" render={() => <DialogsContainer/>}/>
                             <Route path="/users" render={() => <UsersContainer/>}/>
                             <Route path="/music" render={() => <Music/>}/>
