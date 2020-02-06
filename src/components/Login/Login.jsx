@@ -40,7 +40,7 @@ class Login extends React.Component {
 
     render() {
         if (this.props.isAuth) {
-            return <Redirect to={"/profile"}/>
+            return <Redirect to={process.env.PUBLIC_URL + "/profile"}/>
         }
         return (
             <div>

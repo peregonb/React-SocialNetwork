@@ -5,16 +5,16 @@ import {NavLink} from "react-router-dom";
 const HeaderMobile = () => {
     return (
             <div className={s.footer}>
-                <NavLink to="/dialogs" className={`${s.link} icon-envelope`}>
+                <NavLink to={process.env.PUBLIC_URL + "/dialogs"} className={`${s.link} icon-envelope`}>
                     Сообщения
                 </NavLink>
-                <NavLink to="/users" className={`${s.link} icon-avatar`}>
+                <NavLink to={process.env.PUBLIC_URL + "/users"} className={`${s.link} icon-avatar`}>
                     Друзья
                 </NavLink>
-                <NavLink to="/music" className={`${s.link} icon-music-player`}>
+                <NavLink to={process.env.PUBLIC_URL + "/music"} className={`${s.link} icon-music-player`}>
                     Музыка
                 </NavLink>
-                <NavLink to="/news" className={`${s.link} icon-newspaper`}>
+                <NavLink to={process.env.PUBLIC_URL + "/news"} className={`${s.link} icon-newspaper`}>
                     Новости
                 </NavLink>
             </div>

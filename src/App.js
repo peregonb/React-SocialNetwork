@@ -41,14 +41,14 @@ class App extends React.Component {
                     <div className="content-wrap wrap">
                         {sidebar}
                         <div className="content-right">
-                            <Route path="/profile/:userId?" render={() => <ProfileContainer/>}/>
-                            <Route path="/" exact render={() => <ProfileContainer/>}/>
-                            <Route path="/dialogs" render={() => <DialogsContainer/>}/>
-                            <Route path="/users" render={() => <UsersContainer/>}/>
-                            <Route path="/music" render={() => <Music/>}/>
-                            <Route path="/news" render={() => <News/>}/>
-                            <Route path="/settings" render={() => <Settings/>}/>
-                            <Route path="/login" render={() => <Login/>}/>
+                            <Route path={process.env.PUBLIC_URL + '/profile/:userId?'} render={() => <ProfileContainer/>}/>
+                            <Route path={process.env.PUBLIC_URL + '/'} exact render={() => <ProfileContainer/>}/>
+                            <Route path={process.env.PUBLIC_URL + '/dialogs'} render={() => <DialogsContainer/>}/>
+                            <Route path={process.env.PUBLIC_URL + '/users'} render={() => <UsersContainer/>}/>
+                            <Route path={process.env.PUBLIC_URL + '/music'} render={() => <Music/>}/>
+                            <Route path={process.env.PUBLIC_URL + '/news'} render={() => <News/>}/>
+                            <Route path={process.env.PUBLIC_URL + '/settings'} render={() => <Settings/>}/>
+                            <Route path={process.env.PUBLIC_URL + '/login'} render={() => <Login/>}/>
                         </div>
                     </div>
                 </div>

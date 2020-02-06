@@ -14,19 +14,19 @@ const Sidebar = () => {
       {/*  <NavLink to="/homepage" activeClassName={s.active}>Профиль</NavLink>*/}
       {/*</div>*/}
       <div className={`${s.item} icon-envelope`}>
-        <NavLink to="/dialogs" activeClassName={s.active}>Сообщения</NavLink>
+        <NavLink to={process.env.PUBLIC_URL + "/dialogs"} activeClassName={s.active}>Сообщения</NavLink>
       </div>
       <div className={`${s.item} icon-avatar`}>
-        <NavLink to="/users" activeClassName={s.active}>Пользователи</NavLink>
+        <NavLink to={process.env.PUBLIC_URL + "/users"} activeClassName={s.active}>Пользователи</NavLink>
       </div>
       <div className={`${s.item} icon-newspaper`}>
-        <NavLink to="/news" activeClassName={s.active}>Новости</NavLink>
+        <NavLink to={process.env.PUBLIC_URL +"/news"} activeClassName={s.active}>Новости</NavLink>
       </div>
       <div className={`${s.item} icon-music-player`}>
-        <NavLink to="/music" activeClassName={s.active}>Музыка</NavLink>
+        <NavLink to={process.env.PUBLIC_URL + "/music"} activeClassName={s.active}>Музыка</NavLink>
       </div>
       <div className={s.item}>
-        <NavLink to="/login" activeClassName={s.active}>Login</NavLink>
+        <NavLink to={process.env.PUBLIC_URL + "/login"} activeClassName={s.active}>Login</NavLink>
       </div>
       {/* <div className={s.item}>
         <NavLink to="/settings" activeClassName={s.active}>Настройки</NavLink>

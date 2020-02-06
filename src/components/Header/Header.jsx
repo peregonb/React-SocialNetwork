@@ -14,7 +14,7 @@ const Header = (props) => {
         <div className="">
             <div className={s.header}>
                 <div className={`${s.wrap} wrap`}>
-                    <NavLink to="/profile" className={s.logo}>
+                    <NavLink to={process.env.PUBLIC_URL + "/profile"} className={s.logo}>
                         i<span>:</span>røvet
                     </NavLink>
                     <div className={s.menu}>

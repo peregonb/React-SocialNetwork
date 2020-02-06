@@ -15,7 +15,7 @@ let Users = props => {
             <div className={s.wrapper}>
                 {props.users.map(u => (
                     <div key={u.id} className={s.item}>
-                        <NavLink to={'/profile/id' + u.id}>
+                        <NavLink to={process.env.PUBLIC_URL + '/profile/id' + u.id}>
                             <div className={s.img} style={
                                 {backgroundImage: u.photos.small ? "url('" + u.photos.small + "')" : "url('" + userPhoto + "')"}
                             }/>
