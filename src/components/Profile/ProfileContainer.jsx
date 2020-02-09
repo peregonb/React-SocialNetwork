@@ -8,7 +8,6 @@ import {compose} from "redux";
 
 class ProfileContainer extends React.Component {
     componentDidMount() {
-        debugger
         let userId = this.props.match.params.userId;
         let userIdUri;
         !userId ? userIdUri = this.props.loggedPerson.userId : userIdUri = userId.slice(2);

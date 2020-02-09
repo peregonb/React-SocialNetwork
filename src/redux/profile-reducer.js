@@ -1,8 +1,10 @@
 import {profileAPI} from "../api/api";
+import s from "../components/Header/Header.module.scss";
 
 const ADD_POST = "ADD-POST",
     SET_USER_PROFILE = "SET-USER-PROFILE",
-    SET_STATUS = "SET-STATUS";
+    SET_STATUS = "SET-STATUS",
+    NIGHT_MODE = "NIGHT_MODE";
 
 let initialState = {
     postData: [
@@ -27,7 +29,10 @@ let initialState = {
     ],
     // newPostText: "",
     profile: null,
-    status: ""
+    status: "",
+    buttonClass: s.nightModeSwitch,
+    tooltipMessage: "Ночной режим",
+    bodyClass: document.body.setAttribute("theme", "day")
 };
 
 const profileReducer = (state = initialState, action) => {
@@ -57,32 +62,49 @@ const profileReducer = (state = initialState, action) => {
                 status: action.statusText
             };
 
+        case NIGHT_MODE:
+            return {
+                ...state,
+                buttonClass: action.buttonClass,
+                tooltipMessage: action.tooltipMessage,
+                bodyClass: action.bodyClass
+            };
+
         default:
             return state;
     }
 };
+
+export const nightMode = (buttonClass, tooltipMessage, bodyClass) => {
+    return {
+        type: NIGHT_MODE,
+        buttonClass,
+        tooltipMessage,
+        bodyClass
+    };
+};
+
 export const setStatus = status => {
     return {
         type: SET_STATUS,
         statusText: status
     };
 };
-export const getStatusTC = (userIdUri) => {
-    return dispatch => {
-        profileAPI.getStatus(userIdUri).then(response => {
-            dispatch(setStatus(response.data))
-        })
-    }
-}
+export const getStatusTC = (userIdUri) => dispatch => {
+    profileAPI.getStatus(userIdUri).then(response => {
+        dispatch(setStatus(response.data))
+    })
+};
+
 export const updateStatusTC = (status) => {
     return dispatch => {
         profileAPI.updateStatus(status).then(data => {
-            if(data.resultCode === 0){
+            if (data.resultCode === 0) {
                 dispatch(setStatus(status))
             }
         })
     }
-}
+};
 
 export const addPostActionCreator = (newPostText) => {
     return {
@@ -104,6 +126,6 @@ export const setUserProfileTC = (userIdUri) => {
             dispatch(setUserProfile(data))
         })
     }
-}
+};
 
 export default profileReducer;

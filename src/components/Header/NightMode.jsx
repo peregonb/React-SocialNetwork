@@ -1,36 +1,31 @@
 import React from "react";
 import s from "./Header.module.scss";
 import ReactTooltip from "react-tooltip"
+import {connect} from "react-redux";
+import {nightMode} from "../../redux/profile-reducer";
 
 class NightMode extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            buttonClass: s.nightModeSwitch,
-            tooltipMessage: "Ночной режим"
-        }
-    }
 
     switchClick = () => {
-        if (this.state.buttonClass === s.nightModeSwitch) {
-            this.setState({
-                buttonClass: `${s.nightModeSwitch} ${s.active}`,
-                tooltipMessage: "Дневной режим"
-            });
-            document.body.setAttribute("theme", "night");
+        if (this.props.buttonClass === s.nightModeSwitch) {
+            this.props.dispatchState(
+                `${s.nightModeSwitch} ${s.active}`,
+                "Дневной режим",
+                document.body.setAttribute("theme", "night")
+            )
         } else {
-            this.setState({
-                buttonClass: s.nightModeSwitch,
-                tooltipMessage: "Ночной режим"
-            });
-            document.body.setAttribute("theme", "day");
+            this.props.dispatchState(
+                s.nightModeSwitch,
+                "Ночной режим",
+                document.body.setAttribute("theme", "day")
+            )
         }
-    }
+    };
 
     render() {
         return (
-            <div className={this.state.buttonClass} onClick={this.switchClick} data-place="bottom"
-                 data-tip={this.state.tooltipMessage}>
+            <div className={this.props.buttonClass} onClick={this.switchClick} data-place="bottom"
+                 data-tip={this.props.tooltipMessage}>
                 <svg className={s.night} style={{height: "16px", width: "16px"}}
                      enableBackground="new 0 0 438.277 438.277" version="1.1" viewBox="0 0 438.28 438.28"
                      xmlns="http://www.w3.org/2000/svg">
@@ -62,6 +57,23 @@ class NightMode extends React.Component {
             </div>
         );
     }
+}
+
+let mapStateToProps = state => {
+    return {
+        buttonClass: state.profilePage.buttonClass,
+        tooltipMessage: state.profilePage.tooltipMessage,
+        bodyClass: state.profilePage.bodyClass
+    }
 };
 
-export default NightMode;
+let mapDispatchToProps = dispatch => {
+    return {
+        dispatchState: (buttonClass, tooltipMessage, bodyClass) => {
+            dispatch(nightMode(buttonClass, tooltipMessage, bodyClass))
+        }
+    }
+};
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(NightMode);

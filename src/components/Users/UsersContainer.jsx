@@ -9,6 +9,14 @@ import {
 } from '../../redux/users-reducer'
 import {withAuthRedirect} from "../../hoc/withAuthRedirect";
 import {compose} from "redux";
+import {
+    gerTotalUsersCount,
+    getCurrentPage, getFollowDisabled,
+    getFollowDisabledValue,
+    getIsFetching,
+    getPageSize,
+    getUsers
+} from "../../redux/users-selectors";
 
 
 class UsersContainer extends React.Component {
@@ -44,15 +52,27 @@ class UsersContainer extends React.Component {
     }
 }
 
+// let mapStateToProps = state => {
+//     return {
+//         users: state.usersPage.users,
+//         pageSize: state.usersPage.pageSize,
+//         totalUsersCount: state.usersPage.totalUsersCount,
+//         currentPage: state.usersPage.currentPage,
+//         isFetching: state.usersPage.isFetching,
+//         followDisabledValue: state.usersPage.followDisabledValue,
+//         followDisabled: state.usersPage.followDisabled
+//     }
+// }
+
+
 let mapStateToProps = state => {
     return {
-        users: state.usersPage.users,
-        pageSize: state.usersPage.pageSize,
-        totalUsersCount: state.usersPage.totalUsersCount,
-        currentPage: state.usersPage.currentPage,
-        isFetching: state.usersPage.isFetching,
-        followDisabledValue: state.usersPage.followDisabledValue,
-        followDisabled: state.usersPage.followDisabled
+        users: getUsers(state),
+        pageSize: getPageSize(state),
+        totalUsersCount: gerTotalUsersCount(state),
+        currentPage: getCurrentPage(state),
+        isFetching:  getIsFetching(state),
+        followDisabledValue: getFollowDisabledValue(state),
     }
 }
 
