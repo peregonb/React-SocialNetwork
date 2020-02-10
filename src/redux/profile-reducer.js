@@ -32,8 +32,9 @@ let initialState = {
     status: "",
     buttonClass: s.nightModeSwitch,
     tooltipMessage: "Ночной режим",
-    bodyClass: document.body.setAttribute("theme", "day")
+    bodyClass: ""
 };
+
 
 const profileReducer = (state = initialState, action) => {
     switch (action.type) {
