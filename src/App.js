@@ -22,24 +22,25 @@ class App extends React.Component {
         this.props.initApp()
     }
 
+    ifSidebar () {
+        if (this.props.isAuth === true) {
+            document.body.classList.remove('login');
+            return <Sidebar/>;
+        } else {
+            document.body.classList.add('login');
+        }
+    }
+
     render() {
         if (!this.props.init) {
             return <Preloader/>
-        }
-
-        let sidebar;
-        if (this.props.isAuth === true) {
-            sidebar = <Sidebar/>;
-            document.body.classList.remove('login');
-        } else {
-            document.body.classList.add('login');
         }
         return (
             <div className="wrapper">
                 <HeaderContainer/>
                 <div className="content">
                     <div className="content-wrap wrap">
-                        {sidebar}
+                        {this.ifSidebar()}
                         <div className="content-right">
                             <Route path={process.env.PUBLIC_URL + '/profile/:userId?'} render={() => <ProfileContainer/>}/>
                             <Route path={process.env.PUBLIC_URL + '/'} exact render={() => <ProfileContainer/>}/>

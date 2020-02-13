@@ -1,30 +1,40 @@
 import React from "react";
 import s from "./formFields.module.scss";
 
-export const Textarea = ({input, meta, ...props}) => {
+// export const inputField = ({input, meta: {touched, error}, ...props}, fieldType) => {
+//     const hasError = touched && error;
+//
+//     return (
+//         <div className={s.textareaWrapper + " " + (hasError ? s.error : "")}>
+//             {fieldType === "textarea" ? <textarea {...input} {...props}/> : <input {...input} {...props}/>}
+//             <span>{error}</span>
+//             {fieldType === "textarea" && <TextareaButton/>}
+//         </div>
+//     )
+// };
 
-    const hasError = meta.touched && meta.error;
+export const Textarea = ({input, meta: {touched, error}, ...props}) => {
+    const hasError = touched && error;
 
     return (
         <div className={s.textareaWrapper + " " + (hasError ? s.error : "")}>
             <textarea {...input} {...props}/>
-            <span>{meta.error}</span>
+            <span>{error}</span>
             <TextareaButton/>
         </div>
     )
-}
+};
 
-export const Input = ({input, meta, ...props}) => {
-
-    const hasError = meta.touched && meta.error;
+export const Input = ({input, meta: {touched, error}, ...props}) => {
+    const hasError = touched && error;
 
     return (
         <div className={s.textareaWrapper + " " + (hasError ? s.error : "")}>
             <input {...input} {...props}/>
-            <span>{meta.error}</span>
+            <span>{error}</span>
         </div>
     )
-}
+};
 
 export const TextareaButton = () => {
     return (
@@ -32,4 +42,4 @@ export const TextareaButton = () => {
             <button className={s.buttonSend + ` icon-back-left-arrow-curve-symbol`}/>
         </div>
     )
-}
+};

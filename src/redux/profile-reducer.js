@@ -4,7 +4,8 @@ import s from "../components/Header/Header.module.scss";
 const ADD_POST = "ADD-POST",
     SET_USER_PROFILE = "SET-USER-PROFILE",
     SET_STATUS = "SET-STATUS",
-    NIGHT_MODE = "NIGHT_MODE";
+    NIGHT_MODE = "NIGHT_MODE",
+    DELETE_POST = "DELETE_POST";
 
 let initialState = {
     postData: [
@@ -27,7 +28,6 @@ let initialState = {
             likeCount: 8
         }
     ],
-    // newPostText: "",
     profile: null,
     status: "",
     buttonClass: s.nightModeSwitch,
@@ -62,6 +62,11 @@ const profileReducer = (state = initialState, action) => {
                 ...state,
                 status: action.statusText
             };
+        case DELETE_POST :
+            return {
+                ...state,
+                postData: state.postData.filter(p => p.id != action.userId)
+            };
 
         case NIGHT_MODE:
             return {
@@ -91,19 +96,24 @@ export const setStatus = status => {
         statusText: status
     };
 };
-export const getStatusTC = (userIdUri) => dispatch => {
-    profileAPI.getStatus(userIdUri).then(response => {
-        dispatch(setStatus(response.data))
-    })
+
+export const deletePost = postId => {
+    return {
+        type: DELETE_POST,
+        userId: postId
+    };
 };
 
-export const updateStatusTC = (status) => {
-    return dispatch => {
-        profileAPI.updateStatus(status).then(data => {
-            if (data.resultCode === 0) {
-                dispatch(setStatus(status))
-            }
-        })
+
+export const getStatusTC = (userIdUri) => async dispatch => {
+    let response = await profileAPI.getStatus(userIdUri);
+    dispatch(setStatus(response.data))
+};
+
+export const updateStatusTC = (status) => async dispatch => {
+    let data = await profileAPI.updateStatus(status);
+    if (data.resultCode === 0) {
+        dispatch(setStatus(status))
     }
 };
 
@@ -121,12 +131,9 @@ export const setUserProfile = profile => {
 };
 
 
-export const setUserProfileTC = (userIdUri) => {
-    return dispatch => {
-        profileAPI.getProfile(userIdUri).then(data => {
-            dispatch(setUserProfile(data))
-        })
-    }
+export const setUserProfileTC = (userIdUri) => async dispatch => {
+    let data = await profileAPI.getProfile(userIdUri);
+    dispatch(setUserProfile(data))
 };
 
 export default profileReducer;

@@ -5,7 +5,7 @@ const getUsersSimpleSelector = (state) => {
 };
 
 export const getUsers = createSelector(getUsersSimpleSelector, (users) => {
-    return users.filter( arr => true );
+    return users;
 });
 
 export const getPageSize = (state) => {

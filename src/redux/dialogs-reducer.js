@@ -21,11 +21,9 @@ let initialState = {
             imageUrl: "https://avatarko.ru/img/kartinka/14/igrushka_mysh_13852.jpg"
         }
     ],
-    // newMessageText: ""
 };
 
 const dialogsReducer = (state = initialState, action) => {
-    // let stateCopy = { ...state };
 
     switch (action.type) {
 

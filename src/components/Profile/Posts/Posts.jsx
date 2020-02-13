@@ -6,7 +6,9 @@ import {maxLengthCreator, requiredField} from "../../../utils/validators/validat
 import {Textarea} from "../../common/FormsFields/formsFields";
 
 const maxLengthValidator = maxLengthCreator(30);
-const Posts = props => {
+
+const Posts = React.memo((props) => {
+    console.log('render');
     let postElements = props.postData.map(p => (
         <Post
             id={p.id}
@@ -18,7 +20,7 @@ const Posts = props => {
     ));
     let onFormSubmit = (value) => {
         props.addPost(value.PostsFormTextarea)
-    }
+    };
 
     return (
         <div>
@@ -26,7 +28,7 @@ const Posts = props => {
             {postElements}
         </div>
     );
-};
+});
 
 const PostsForm = props => {
     return (
@@ -39,7 +41,7 @@ const PostsForm = props => {
             />
         </form>
     )
-}
+};
 
 const PostsFormRedux = reduxForm({form: "PostsForm"})(PostsForm);
 

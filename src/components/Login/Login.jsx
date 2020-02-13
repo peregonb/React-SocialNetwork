@@ -9,23 +9,35 @@ import {connect} from "react-redux";
 import {Redirect} from "react-router-dom";
 
 
-export const LoginForm = (props) => {
+export const LoginForm = ({handleSubmit, error}) => {
     return (
-        <form onSubmit={props.handleSubmit}>
-            <Field validate={[requiredField]} component={Input} name={'login'} className={s.login}
-                   placeholder={"Login"}/>
-            <Field validate={[requiredField]} component={Input} name={'password'} className={s.password}
+        <form onSubmit={handleSubmit}>
+            <Field validate={[requiredField]}
+                   component={Input}
+                   name={'login'}
+                   className={s.login}
+                   placeholder={"Login"}
+            />
+            <Field validate={[requiredField]}
+                   component={Input}
+                   name={'password'}
+                   className={s.password}
                    type={"password"}
-                   placeholder={"Password"}/>
+                   placeholder={"Password"}
+            />
             <div className={s.rememberWrap}>
-                <Field component={Input} name={'rememberMe'} type="checkbox" className={s.remember}/>
+                <Field component={Input}
+                       name={'rememberMe'}
+                       type="checkbox"
+                       className={s.remember}
+                />
                 <label>remember me</label>
             </div>
-            {props.error && <div className={style.errorField}>{props.error}</div>}
+            {error && <div className={style.errorField}>{error}</div>}
             <button>Login</button>
         </form>
     )
-}
+};
 
 const LoginReduxForm = reduxForm({
     form: "login"
@@ -36,7 +48,7 @@ class Login extends React.Component {
     onSubmit = (formData) => {
         console.log(formData);
         this.props.postAuthTC(formData)
-    }
+    };
 
     render() {
         if (this.props.isAuth) {
@@ -52,6 +64,6 @@ class Login extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-        isAuth: state.auth.isAuth
-    })
+    isAuth: state.auth.isAuth
+});
 export default connect(mapStateToProps, {postAuthTC})(Login);

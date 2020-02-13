@@ -11,8 +11,7 @@ import {withAuthRedirect} from "../../hoc/withAuthRedirect";
 import {compose} from "redux";
 import {
     gerTotalUsersCount,
-    getCurrentPage, getFollowDisabled,
-    getFollowDisabledValue,
+    getCurrentPage, getFollowDisabledValue,
     getIsFetching,
     getPageSize,
     getUsers
@@ -23,12 +22,12 @@ class UsersContainer extends React.Component {
     componentDidMount() {
         let {currentPage, pageSize, getUsersTC} = this.props;
         getUsersTC(currentPage, pageSize);
-    }
+    };
 
     onPageChange = pageNumber => {
         let {currentPage, pageSize, changeUsersPageTC} = this.props;
         changeUsersPageTC(currentPage, pageSize, pageNumber);
-    }
+    };
 
     render() {
         return (
@@ -52,18 +51,6 @@ class UsersContainer extends React.Component {
     }
 }
 
-// let mapStateToProps = state => {
-//     return {
-//         users: state.usersPage.users,
-//         pageSize: state.usersPage.pageSize,
-//         totalUsersCount: state.usersPage.totalUsersCount,
-//         currentPage: state.usersPage.currentPage,
-//         isFetching: state.usersPage.isFetching,
-//         followDisabledValue: state.usersPage.followDisabledValue,
-//         followDisabled: state.usersPage.followDisabled
-//     }
-// }
-
 
 let mapStateToProps = state => {
     return {
@@ -74,7 +61,7 @@ let mapStateToProps = state => {
         isFetching:  getIsFetching(state),
         followDisabledValue: getFollowDisabledValue(state),
     }
-}
+};
 
 
 export default compose(

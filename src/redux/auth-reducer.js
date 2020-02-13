@@ -1,7 +1,7 @@
 import {authAPI} from "../api/api";
 import {stopSubmit} from "redux-form";
 
-const SET_USER_DATA = "SET-USER-DATA";
+const SET_USER_DATA = "auth/SET-USER-DATA";
 
 let initialState = {
     userId: null,
@@ -34,36 +34,30 @@ export const setAuthUserData = (userId, email, login, isAuth) => {
 };
 
 
-export const getAuthTC = () => dispatch => {
-        return authAPI.getAuth().then(data => {
-            if (data.resultCode === 0) {
-                let {id, login, email} = data.data;
-                dispatch(setAuthUserData(id, email, login, true))
-            }
-        })
-}
+export const getAuthTC = () => async dispatch => {
+    let data = await authAPI.getAuth();
+    if (data.resultCode === 0) {
+        let {id, login, email} = data.data;
+        dispatch(setAuthUserData(id, email, login, true))
+    }
+};
 
-export const postAuthTC = (formData) => dispatch => {
-    authAPI.postAuth(formData.login, formData.password, formData.rememberMe).then(data => {
-        if (data.resultCode === 0) {
-            console.log('logged')
-            dispatch(getAuthTC())
-        }
-        else{
-            let message = data.messages > 0 ? data.messages[0] : "Some error"
-            dispatch(stopSubmit("login",{_error: message}));
-        }
-    })
-}
+export const postAuthTC = (formData) => async dispatch => {
+    let data = await authAPI.postAuth(formData.login, formData.password, formData.rememberMe);
+    if (data.resultCode === 0) {
+        dispatch(getAuthTC())
+    } else {
+        let message = data.messages > 0 ? data.messages[0] : "Some error";
+        dispatch(stopSubmit("login", {_error: message}));
+    }
+};
 
-export const deleteAuthTC = () => dispatch => {
-    authAPI.deleteAuth().then(data => {
-        if (data.resultCode === 0) {
-            console.log('unlogged')
-            dispatch(setAuthUserData(null, null, null, false))
-        }
-    })
-}
+export const deleteAuthTC = () => async dispatch => {
+    let data = await authAPI.deleteAuth();
+    if (data.resultCode === 0) {
+        dispatch(setAuthUserData(null, null, null, false))
+    }
+};
 
 
 export default authReducer;

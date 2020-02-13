@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import s from "../Profile.module.scss";
 
 const Socials = props => {
@@ -70,8 +70,16 @@ const Socials = props => {
     }
 
     let Instagram = props => {
+        let [hover, setHover] = useState(props.color);
+
         if (props.link) {
-            return (<a href={`https://${props.link}`} target="_blank" className={s.socialMedia}>
+            return (<a href={`https://${props.link}`} target="_blank" className={s.socialMedia}
+                       onMouseEnter={() => {
+                           setHover(props.hoverColor);
+                       }}
+                       onMouseLeave={() => {
+                           setHover(props.color);
+                       }}>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89.758 89.758">
                     <defs>
                         <radialGradient id="a" cx="21" cy="89" r="89" gradientUnits="userSpaceOnUse">

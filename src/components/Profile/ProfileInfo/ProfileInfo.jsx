@@ -3,27 +3,26 @@ import s from "../Profile.module.scss";
 import Preloader from "../../common/Preloader/preloader";
 import Socials from "./Socials";
 import userPhoto from '../../../assets/img/user.svg';
-import ProfileStatus from "./ProfileStatus";
 import ProfileStatusWithHooks from "./ProfileStatusWithHooks";
 
-const ProfileInfo = props => {
+const ProfileInfo = ({profile, status, updateStatus}) => {
 
-    if (!props.profile) {
+    if (!profile) {
         return <Preloader/>
     }
 
     return (
         <div className={s.block}>
-            <img src={props.profile.photos.large ? props.profile.photos.large : userPhoto} className={s.avatar}/>
+            <img src={profile.photos.large ? profile.photos.large : userPhoto} className={s.avatar}/>
             <div className={s.blockRight}>
                 <div className={s.description}>
-                    <div className={s.name}>{props.profile.fullName}</div>
-                    <ProfileStatusWithHooks aboutMe={props.profile.aboutMe === null ? false : props.profile.aboutMe} status={props.status} updateStatus={props.updateStatus}/>
+                    <div className={s.name}>{profile.fullName}</div>
+                    <ProfileStatusWithHooks aboutMe={profile.aboutMe === null ? false : profile.aboutMe} status={status} updateStatus={updateStatus}/>
                 </div>
-                <Socials profile={props.profile}/>
+                <Socials profile={profile}/>
             </div>
         </div>
     )
-}
+};
 
 export default ProfileInfo;
