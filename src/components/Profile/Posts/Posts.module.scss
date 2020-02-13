@@ -1,27 +1,28 @@
 @import "../../../assets/scss/resources";
 
-.block{
-    position: relative;
-    background: #fff;
-    border-radius: 4px;
-    box-shadow: 0 1px 0 0 #d7d8db, 0 0 0 1px #e3e4e8;
-    margin: 0 0 0;
-    padding: 15px;
-    display: flex;
-    justify-content: flex-start;
-    resize: none;
-    box-sizing: content-box;
+.block {
+  position: relative;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 1px 0 0 #d7d8db, 0 0 0 1px #e3e4e8;
+  margin: 0 0 0;
+  padding: 15px;
+  display: flex;
+  justify-content: flex-start;
+  resize: none;
+  box-sizing: content-box;
 }
 
+.textareaWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
 
-
-
-.textareaWrapper{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 15px;
+  & > div {
+    margin-bottom: 0;
+  }
 }
 
 @include nignt {
@@ -29,13 +30,7 @@
     background: $nightLightGrey;
     box-shadow: 0 1px 0 0 $nightLightGrey, 0 0 0 1px $nightLightGrey;
   }
-    .buttonSend{
-        background-color: $nightOrange;
-    }
-}
-
-.textarea{
-
-
-
+  .buttonSend {
+    background-color: $nightOrange;
+  }
 }

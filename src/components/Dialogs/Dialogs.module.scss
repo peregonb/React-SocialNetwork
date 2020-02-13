@@ -173,6 +173,10 @@ textarea.block {
   justify-content: space-between;
   align-items: center;
   margin-top: 15px;
+  width: 100%;
+  & > div {
+    margin-bottom: 0;
+  }
 }
 
 @include nignt {

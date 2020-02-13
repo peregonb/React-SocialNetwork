@@ -3,9 +3,7 @@ import s from "./Sidebar.module.scss";
 import {NavLink} from "react-router-dom";
 
 const Sidebar = () => {
-
-
-  // сделать иконку для юзеров
+  
 
   return (
     <div className={s.sidebar}>
@@ -25,9 +23,9 @@ const Sidebar = () => {
       <div className={`${s.item} icon-music-player`}>
         <NavLink to={process.env.PUBLIC_URL + "/music"} activeClassName={s.active}>Музыка</NavLink>
       </div>
-      <div className={s.item}>
-        <NavLink to={process.env.PUBLIC_URL + "/login"} activeClassName={s.active}>Login</NavLink>
-      </div>
+      {/*<div className={s.item}>*/}
+      {/*  <NavLink to={process.env.PUBLIC_URL + "/login"} activeClassName={s.active}>Login</NavLink>*/}
+      {/*</div>*/}
       {/* <div className={s.item}>
         <NavLink to="/settings" activeClassName={s.active}>Настройки</NavLink>
       </div> */}

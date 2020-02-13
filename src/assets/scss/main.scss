@@ -75,6 +75,7 @@ body.login {
     &-right {
       width: 100%;
       padding-left: 0;
+      position: relative;
       @include r(1340) {
         width: 100%;
         padding-left: 0;
@@ -89,4 +90,34 @@ body.login {
       }
     }
   }
+}
+
+button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333;
+    min-height: 30px;
+    width: auto;
+    padding: 0 15px;
+    border: none;
+    outline: none;
+    color: white;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 10px;
+    line-height: 1;
+    opacity: 1;
+    transition: opacity .2s;
+    &[disabled]{
+      opacity: .3;
+      transition: opacity .2s;
+    }
+  }
+
+@include nignt {
+    button{
+        background-color: $nightOrange;
+    }
 }

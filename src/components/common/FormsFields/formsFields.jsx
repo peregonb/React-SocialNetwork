@@ -1,6 +1,7 @@
 import React from "react";
 import s from "./formFields.module.scss";
 
+
 // export const inputField = ({input, meta: {touched, error}, ...props}, fieldType) => {
 //     const hasError = touched && error;
 //
@@ -36,6 +37,18 @@ export const Input = ({input, meta: {touched, error}, ...props}) => {
     )
 };
 
+export const CheckBox = ({input, meta: {touched, error}, ...props}) => {
+    const hasError = touched && error;
+
+    return (
+        <div className={s.textareaWrapper + " " + (hasError ? s.error : "")}>
+            <input id={"checkbox"} {...input} {...props}/>
+            <label htmlFor="checkbox">remember me</label>
+            <span>{error}</span>
+        </div>
+    )
+};
+
 export const TextareaButton = () => {
     return (
         <div className={s.buttonWrapper}>
@@ -43,3 +56,6 @@ export const TextareaButton = () => {
         </div>
     )
 };
+
+
+// TODO Fix scroll on textarea
