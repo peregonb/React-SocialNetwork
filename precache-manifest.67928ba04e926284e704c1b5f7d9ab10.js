@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "268c701f3d0f94f50beae4276d2f7931",
+    "revision": "b7c36619185930d75ffb0c6d7d8d0595",
     "url": "/React-SocialNetwork/index.html"
   },
   {
-    "revision": "d59d7ab439fd59fffd0e",
-    "url": "/React-SocialNetwork/static/css/main.1f4ffe35.chunk.css"
+    "revision": "0fee4cc72e8333bf684a",
+    "url": "/React-SocialNetwork/static/css/main.64f77b77.chunk.css"
   },
   {
-    "revision": "9b2d2dc2797187d601b5",
-    "url": "/React-SocialNetwork/static/js/2.22971999.chunk.js"
+    "revision": "9bc4df5e1d82d0079b64",
+    "url": "/React-SocialNetwork/static/js/2.9071e385.chunk.js"
   },
   {
-    "revision": "d59d7ab439fd59fffd0e",
-    "url": "/React-SocialNetwork/static/js/main.411dca09.chunk.js"
+    "revision": "0fee4cc72e8333bf684a",
+    "url": "/React-SocialNetwork/static/js/main.8f918ffd.chunk.js"
   },
   {
     "revision": "d5676b975d81e162e3ce",
@@ -96,8 +96,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/React-SocialNetwork/static/media/icomoon.5b110b78.ttf"
   },
   {
-    "revision": "efce8d7ca91b1eef70701ce5d3f1cb6c",
-    "url": "/React-SocialNetwork/static/media/preloader.efce8d7c.svg"
+    "revision": "7fcadcaee8e0629594bd0914dc62fb63",
+    "url": "/React-SocialNetwork/static/media/preloader.7fcadcae.svg"
   },
   {
     "revision": "8889b0fc2f02006a07042b6b4bc65aa4",
