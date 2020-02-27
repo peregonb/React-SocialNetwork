@@ -61,7 +61,7 @@ class App extends React.Component {
 const mapStateToProps = (state) => ({
     init: state.app.init,
     isAuth: state.auth.isAuth
-})
+});
 
 
 export default compose(
