@@ -1,5 +1,3 @@
-import {authAPI} from "../api/api";
-import {stopSubmit} from "redux-form";
 import {getAuthTC} from "./auth-reducer";
 
 const SET_INIT = "SET-INIT";
